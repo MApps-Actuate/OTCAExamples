@@ -1,0 +1,1612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201603260016</property>
+    <html-property name="description">WizardTemplateChoicePage.message.BlankAuto</html-property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">1237</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="theme">ThemesReportItems31.Modern</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+        <structure>
+            <property name="fileName">Report Libraries/Content_Server.rptlibrary</property>
+            <property name="namespace">Content_Server</property>
+        </structure>
+    </list-property>
+    <method name="onContentUpdate"><![CDATA[// Get the Viewer's current UI Options
+var uiOptions = this.getViewer().getUIOptions();
+
+// Remove ability for user to change interactivity options
+uiOptions.enableEditReport(false);
+
+// Set the modified UI Options back into the Viewer
+this.getViewer().setUIOptions(uiOptions);
+
+// If Interactivity is not enabled, enable it
+if (!this.getViewer().isInteractive())
+	this.getViewer().enableIV();]]></method>
+    <data-sources>
+        <data-mart-data-source name="CSInsights Data Object" id="290">
+            <property name="datamartURL">Data Objects/CSInsights Data Object</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+        <oda-data-source extensionID="org.eclipse.datatools.connectivity.oda.flatfile" name="FlatFile" id="1236">
+            <property name="HOME">Data Objects/</property>
+            <property name="DELIMTYPE">COMMA</property>
+            <property name="CHARSET">UTF-8</property>
+            <property name="INCLCOLUMNNAME">YES</property>
+            <property name="INCLTYPELINE">NO</property>
+            <property name="TRAILNULLCOLS">NO</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.datatools.connectivity.oda.flatfile.dataSet" name="FlatFileForecastExport" id="1237">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Day</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Day</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Measure</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">Measure</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">sort</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">sort</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Day</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Measure</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">sort</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">FlatFile</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Day</property>
+                    <property name="nativeName">Day</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Measure</property>
+                    <property name="nativeName">Measure</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">type</property>
+                    <property name="nativeName">type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">sort</property>
+                    <property name="nativeName">sort</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "Day", "Measure", "type", "sort" from "Forecasting.csv" : {"Day","Day",STRING;"Measure","Measure",DOUBLE;"type","type",STRING;"sort","sort",INT}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Day</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Day</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Measure</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Measure</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <data-mart-data-set name="Users by Location" id="1251">
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">Ctry</property>
+                    <expression name="expression" type="bre">IF([OfficeLocation]="Waterloo" OR [OfficeLocation]="Toronto", "CA", IF([OfficeLocation]="Boston" OR [OfficeLocation]="San Francisco" OR [OfficeLocation]="Chicago" OR [OfficeLocation]="New York" OR [OfficeLocation]="Seattle", "US", IF([OfficeLocation]="London" OR [OfficeLocation]="Manchester", "UK", IF([OfficeLocation]="Paris", "FR", IF([OfficeLocation]="Frankfurt", "DE", "Europe and Asia Pacific")))))</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">OfficeLocation</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">OfficeLocation</text-property>
+                    <text-property name="heading">OfficeLocation</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">NumberOfUsers</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">NumberOfUsers</text-property>
+                    <text-property name="heading">NumberOfUsers</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">Ctry</property>
+                    <property name="analysis">attribute</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">OfficeLocation</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">NumberOfUsers</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Ctry</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CSInsights Data Object</property>
+            <property name="dataObject">Users by Location</property>
+            <list-property name="selectedColumns">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">OfficeLocation</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">NumberOfUsers</property>
+                    <property name="dataType">integer</property>
+                </structure>
+            </list-property>
+        </data-mart-data-set>
+    </data-sets>
+    <property name="linkedDataModels">
+        <data-mart-linked-data-model name="Todays Activities" id="291">
+            <property name="dataSource">CSInsights Data Object</property>
+            <property name="dataObject">Todays Activities</property>
+        </data-mart-linked-data-model>
+    </property>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <themes>
+        <report-item-theme type="Chart" name="BOLD" id="1255">
+            <xml-property name="customValues"><![CDATA[<type>1</type><ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Line Chart" subType="Overlay">
+  <block>
+   <children _type="TitleBlock" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="true" orientation="0" position="0">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <text>
+     <font name="Lato" size="14.0"/>
+     <color _body=",255,255,255,255"/>
+    </text>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,211.5,130.0"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+   <background _body=",0,255,255,255"/>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <interactivity legendBehavior="1"/>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes labelPosition="1">
+   <title>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes primaryAxis="true" percent="false">
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition="row[&amp;quot;type&amp;quot;]">
+      <grouping/>
+     </query>
+     <seriesPalette>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,102,0"/>
+      <entries _body=",255,232,172,57"/>
+      <entries _body=",255,128,255,128"/>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+     </seriesPalette>
+     <series _type="LineSeries" stacked="false" translucent="false" curve="true">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&amp;quot;Measure&amp;quot;]">
+       <grouping/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes thickness="4">
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+     <series _type="BarSeries" seriesIdentifier="" riser="0">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+     </series>
+     <series _type="AreaSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+     <series _type="PieSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <title>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </title>
+     </series>
+     <series _type="DialSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dial>
+       <lineAttributes>
+        <color _nil="1"/>
+       </lineAttributes>
+       <majorGrid>
+        <lineAttributes>
+         <color _nil="1"/>
+        </lineAttributes>
+        <tickAttributes>
+         <color _nil="1"/>
+        </tickAttributes>
+       </majorGrid>
+       <minorGrid>
+        <lineAttributes>
+         <color _nil="1"/>
+        </lineAttributes>
+        <tickAttributes>
+         <color _nil="1"/>
+        </tickAttributes>
+       </minorGrid>
+       <label>
+        <background _nil="1"/>
+        <outline>
+         <color _nil="1"/>
+        </outline>
+       </label>
+      </dial>
+      <needle>
+       <lineAttributes>
+        <color _nil="1"/>
+       </lineAttributes>
+      </needle>
+     </series>
+     <series _type="ScatterSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+     <series _type="StockSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+     </series>
+     <series _type="BubbleSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+      <accLineAttributes>
+       <color _nil="1"/>
+      </accLineAttributes>
+     </series>
+     <series _type="DifferenceSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+      <negativeMarkers>
+       <outline/>
+      </negativeMarkers>
+      <negativeLineAttributes>
+       <color _nil="1"/>
+      </negativeLineAttributes>
+     </series>
+     <series _type="GanttSeries" seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+      <connectionLine>
+       <color _nil="1"/>
+      </connectionLine>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+      <decorationLabel>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </decorationLabel>
+     </series>
+     <series _type="RadarSeries" seriesIdentifier="">
+      <label>
+       <caption>
+        <font>
+         <alignment/>
+        </font>
+       </caption>
+       <outline/>
+       <insets/>
+      </label>
+      <dataPoint/>
+      <marker>
+       <outline/>
+      </marker>
+      <lineAttributes/>
+      <webLineAttributes/>
+      <webLabel>
+       <caption>
+        <font>
+         <alignment/>
+        </font>
+       </caption>
+       <outline/>
+       <insets/>
+      </webLabel>
+      <catLabel>
+       <caption>
+        <font>
+         <alignment/>
+        </font>
+       </caption>
+       <outline/>
+       <insets/>
+      </catLabel>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <label visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <markerLines labelAnchor="6">
+     <lineAttributes thickness="3" visible="true">
+      <color _body=",255,119,187,255"/>
+     </lineAttributes>
+     <value _type="NumberDataElement" value="950.0"/>
+     <label visible="true">
+      <caption value="Current Max Capacity 950GB">
+       <font name="Lato" size="10.0">
+        <alignment/>
+       </font>
+       <color _body=",255,255,255,255"/>
+      </caption>
+      <outline/>
+      <insets/>
+     </label>
+     <cursor type="0"/>
+    </markerLines>
+    <majorGrid>
+     <lineAttributes visible="false">
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes visible="false">
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <scale>
+     <min _type="NumberDataElement" value="700.0"/>
+    </scale>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <ancillaryAxes>
+    <title>
+     <caption value="Z-Axis Title"/>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,102,0"/>
+      <entries _body=",255,232,172,57"/>
+      <entries _body=",255,128,255,128"/>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+     </seriesPalette>
+     <series seriesIdentifier="">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <curveFitting _nil="1"/>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _type="NumberDataElement" value="0.0"/>
+    </origin>
+   </ancillaryAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <seriesPalette>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,255,102,0"/>
+     <entries _body=",255,232,172,57"/>
+     <entries _body=",255,128,255,128"/>
+     <entries _body=",255,64,128,128"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,170,85,85"/>
+     <entries _body=",255,128,128,0"/>
+     <entries _body=",255,192,192,192"/>
+     <entries _body=",255,255,255,128"/>
+     <entries _body=",255,128,192,128"/>
+     <entries _body=",255,7,146,94"/>
+     <entries _body=",255,0,128,255"/>
+     <entries _body=",255,255,128,192"/>
+     <entries _body=",255,0,255,255"/>
+     <entries _body=",255,255,128,128"/>
+     <entries _body=",255,0,128,192"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,255,0,255"/>
+     <entries _body=",255,128,64,64"/>
+     <entries _body=",255,255,128,64"/>
+     <entries _body=",255,80,240,120"/>
+     <entries _body=",255,0,64,128"/>
+     <entries _body=",255,128,0,64"/>
+     <entries _body=",255,255,0,128"/>
+     <entries _body=",255,128,128,64"/>
+     <entries _body=",255,128,128,128"/>
+     <entries _body=",255,255,128,255"/>
+     <entries _body=",255,0,64,0"/>
+     <entries _body=",255,0,0,0"/>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,255,128,0"/>
+    </seriesPalette>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&amp;quot;Day&amp;quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping _nil="1"/>
+   </seriesDefinitions>
+   <lineAttributes visible="false">
+    <color _nil="1"/>
+   </lineAttributes>
+   <label visible="true">
+    <caption>
+     <font name="Lato" size="10.0"/>
+     <color _body=",255,255,255,255"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>]]></xml-property>
+        </report-item-theme>
+    </themes>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <text name="Script Loader" id="1235">
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<script>
+/*! head.load - v1.0.3 */
+(function(n,t){"use strict";function w(){}function u(n,t){if(n){typeof n=="object"&amp;&amp;(n=[].slice.call(n));for(var i=0,r=n.length;i<r;i++)t.call(n,n[i],i)}}function it(n,i){var r=Object.prototype.toString.call(i).slice(8,-1);return i!==t&amp;&amp;i!==null&amp;&amp;r===n}function s(n){return it("Function",n)}function a(n){return it("Array",n)}function et(n){var i=n.split("/"),t=i[i.length-1],r=t.indexOf("?");return r!==-1?t.substring(0,r):t}function f(n){(n=n||w,n._done)||(n(),n._done=1)}function ot(n,t,r,u){var f=typeof n=="object"?n:{test:n,success:!t?!1:a(t)?t:[t],failure:!r?!1:a(r)?r:[r],callback:u||w},e=!!f.test;return e&amp;&amp;!!f.success?(f.success.push(f.callback),i.load.apply(null,f.success)):e||!f.failure?u():(f.failure.push(f.callback),i.load.apply(null,f.failure)),i}function v(n){var t={},i,r;if(typeof n=="object")for(i in n)!n[i]||(t={name:i,url:n[i]});else t={name:et(n),url:n};return(r=c[t.name],r&amp;&amp;r.url===t.url)?r:(c[t.name]=t,t)}function y(n){n=n||c;for(var t in n)if(n.hasOwnProperty(t)&amp;&amp;n[t].state!==l)return!1;return!0}function st(n){n.state=ft;u(n.onpreload,function(n){n.call()})}function ht(n){n.state===t&amp;&amp;(n.state=nt,n.onpreload=[],rt({url:n.url,type:"cache"},function(){st(n)}))}function ct(){var n=arguments,t=n[n.length-1],r=[].slice.call(n,1),f=r[0];return(s(t)||(t=null),a(n[0]))?(n[0].push(t),i.load.apply(null,n[0]),i):(f?(u(r,function(n){s(n)||!n||ht(v(n))}),b(v(n[0]),s(f)?f:function(){i.load.apply(null,r)})):b(v(n[0])),i)}function lt(){var n=arguments,t=n[n.length-1],r={};return(s(t)||(t=null),a(n[0]))?(n[0].push(t),i.load.apply(null,n[0]),i):(u(n,function(n){n!==t&amp;&amp;(n=v(n),r[n.name]=n)}),u(n,function(n){n!==t&amp;&amp;(n=v(n),b(n,function(){y(r)&amp;&amp;f(t)}))}),i)}function b(n,t){if(t=t||w,n.state===l){t();return}if(n.state===tt){i.ready(n.name,t);return}if(n.state===nt){n.onpreload.push(function(){b(n,t)});return}n.state=tt;rt(n,function(){n.state=l;t();u(h[n.name],function(n){f(n)});o&amp;&amp;y()&amp;&amp;u(h.ALL,function(n){f(n)})})}function at(n){n=n||"";var t=n.split("?")[0].split(".");return t[t.length-1].toLowerCase()}function rt(t,i){function e(t){t=t||n.event;u.onload=u.onreadystatechange=u.onerror=null;i()}function o(f){f=f||n.event;(f.type==="load"||/loaded|complete/.test(u.readyState)&amp;&amp;(!r.documentMode||r.documentMode<9))&amp;&amp;(n.clearTimeout(t.errorTimeout),n.clearTimeout(t.cssTimeout),u.onload=u.onreadystatechange=u.onerror=null,i())}function s(){if(t.state!==l&amp;&amp;t.cssRetries<=20){for(var i=0,f=r.styleSheets.length;i<f;i++)if(r.styleSheets[i].href===u.href){o({type:"load"});return}t.cssRetries++;t.cssTimeout=n.setTimeout(s,250)}}var u,h,f;i=i||w;h=at(t.url);h==="css"?(u=r.createElement("link"),u.type="text/"+(t.type||"css"),u.rel="stylesheet",u.href=t.url,t.cssRetries=0,t.cssTimeout=n.setTimeout(s,500)):(u=r.createElement("script"),u.type="text/"+(t.type||"javascript"),u.src=t.url);u.onload=u.onreadystatechange=o;u.onerror=e;u.async=!1;u.defer=!1;t.errorTimeout=n.setTimeout(function(){e({type:"timeout"})},7e3);f=r.head||r.getElementsByTagName("head")[0];f.insertBefore(u,f.lastChild)}function vt(){for(var t,u=r.getElementsByTagName("script"),n=0,f=u.length;n<f;n++)if(t=u[n].getAttribute("data-headjs-load"),!!t){i.load(t);return}}function yt(n,t){var v,p,e;return n===r?(o?f(t):d.push(t),i):(s(n)&amp;&amp;(t=n,n="ALL"),a(n))?(v={},u(n,function(n){v[n]=c[n];i.ready(n,function(){y(v)&amp;&amp;f(t)})}),i):typeof n!="string"||!s(t)?i:(p=c[n],p&amp;&amp;p.state===l||n==="ALL"&amp;&amp;y()&amp;&amp;o)?(f(t),i):(e=h[n],e?e.push(t):e=h[n]=[t],i)}function e(){if(!r.body){n.clearTimeout(i.readyTimeout);i.readyTimeout=n.setTimeout(e,50);return}o||(o=!0,vt(),u(d,function(n){f(n)}))}function k(){r.addEventListener?(r.removeEventListener("DOMContentLoaded",k,!1),e()):r.readyState==="complete"&amp;&amp;(r.detachEvent("onreadystatechange",k),e())}var r=n.document,d=[],h={},c={},ut="async"in r.createElement("script")||"MozAppearance"in r.documentElement.style||n.opera,o,g=n.head_conf&amp;&amp;n.head_conf.head||"head",i=n[g]=n[g]||function(){i.ready.apply(null,arguments)},nt=1,ft=2,tt=3,l=4,p;if(r.readyState==="complete")e();else if(r.addEventListener)r.addEventListener("DOMContentLoaded",k,!1),n.addEventListener("load",e,!1);else{r.attachEvent("onreadystatechange",k);n.attachEvent("onload",e);p=!1;try{p=!n.frameElement&amp;&amp;r.documentElement}catch(wt){}p&amp;&amp;p.doScroll&amp;&amp;function pt(){if(!o){try{p.doScroll("left")}catch(t){n.clearTimeout(i.readyTimeout);i.readyTimeout=n.setTimeout(pt,50);return}e()}}()}i.load=i.js=ut?lt:ct;i.test=ot;i.ready=yt;i.ready(r,function(){y()&amp;&amp;u(h.ALL,function(n){f(n)});i.feature&amp;&amp;i.feature("domloaded",!0)})})(window);
+/*
+//# sourceMappingURL=head.load.min.js.map
+*/
+</script>
+<script>
+	function loadScripts(){
+		head.load("<VALUE-OF>var iter = _jsContext.getPageVariables().iterator();
+		var myVars = []
+		while(iter.hasNext()){
+			var myMap = iter.next();
+			if(myMap.getName().substring(0,7).toUpperCase() == "SCRIPT_"){
+				myVars.push(myMap.getValue());
+			}
+		}
+		myVars.join("\",\"");</VALUE-OF>", afterLoad);
+	}
+	
+	function afterLoad(){
+		<VALUE-OF>var callback = _jsContext.getPageVariable("Callback");
+if(callback != null &amp;&amp; callback != "")
+	callback + "()";
+else 
+	"";</VALUE-OF>
+	}
+
+	head(loadScripts());
+</script>]]></text-property>
+        </text>
+        <grid id="279">
+            <property name="height">5.6in</property>
+            <property name="width">6.9in</property>
+            <expression name="bookmark" type="javascript">"CAPACITYFORECAST"</expression>
+            <column id="280"/>
+            <column id="281"/>
+            <row id="282">
+                <property name="backgroundColor">#004080</property>
+                <cell id="283">
+                    <property name="paddingTop">1pt</property>
+                    <property name="paddingLeft">1pt</property>
+                    <property name="verticalAlign">middle</property>
+                    <label id="284">
+                        <property name="fontFamily">"Lato"</property>
+                        <property name="fontSize">24pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#FFFFFF</property>
+                        <property name="paddingTop">1pt</property>
+                        <property name="paddingLeft">10pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">6 Mo Capacity Forecast (GB):</text-property>
+                    </label>
+                </cell>
+                <cell id="286">
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <label id="287">
+                        <property name="fontFamily">"FontAwesome"</property>
+                        <property name="fontSize">58pt</property>
+                        <property name="color">#FFFFFF</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingRight">5pt</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text"></text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="288">
+                <property name="backgroundColor">#004080</property>
+                <cell id="289">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="paddingTop">1pt</property>
+                    <property name="paddingLeft">1pt</property>
+                    <property name="verticalAlign">middle</property>
+                    <extended-item extensionName="Chart" id="285">
+                        <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Line Chart" subType="Overlay">
+  <block>
+   <children _type="TitleBlock" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="true" orientation="0" position="0">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <text>
+     <font name="Lato" size="14.0"/>
+     <color _body=",255,255,255,255"/>
+    </text>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,211.5,130.0"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+   <background _body=",0,255,255,255"/>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="&#039;A&#039;,&#039;B&#039;,&#039;C&#039;,&#039;D&#039;,&#039;E&#039;"/>
+   <orthogonalSampleData dataSetRepresentation="6,4,12,8,10" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <interactivity legendBehavior="1"/>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes labelPosition="1">
+   <title>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes primaryAxis="true" percent="false">
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition="row[&quot;type&quot;]">
+      <grouping/>
+     </query>
+     <seriesPalette>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,102,0"/>
+      <entries _body=",255,232,172,57"/>
+      <entries _body=",255,128,255,128"/>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+     </seriesPalette>
+     <series _type="LineSeries" stacked="false" translucent="false" curve="true">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;Measure&quot;]">
+       <grouping/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes thickness="4">
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <label visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <markerLines labelAnchor="6">
+     <lineAttributes thickness="3" visible="true">
+      <color _body=",255,119,187,255"/>
+     </lineAttributes>
+     <value _type="NumberDataElement" value="950.0"/>
+     <label visible="true">
+      <caption value="Current Max Capacity 950GB">
+       <font name="Lato" size="10.0">
+        <alignment/>
+       </font>
+       <color _body=",255,255,255,255"/>
+      </caption>
+      <outline/>
+      <insets/>
+     </label>
+     <cursor type="0"/>
+    </markerLines>
+    <majorGrid>
+     <lineAttributes visible="false">
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes visible="false">
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <scale>
+     <min _type="NumberDataElement" value="700.0"/>
+    </scale>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions sorting="0">
+    <query definition=""/>
+    <seriesPalette>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,232,172,57"/>
+     <entries _body=",255,128,255,128"/>
+     <entries _body=",255,64,128,128"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,170,85,85"/>
+     <entries _body=",255,128,128,0"/>
+     <entries _body=",255,192,192,192"/>
+     <entries _body=",255,255,255,128"/>
+     <entries _body=",255,128,192,128"/>
+     <entries _body=",255,7,146,94"/>
+     <entries _body=",255,0,128,255"/>
+     <entries _body=",255,255,128,192"/>
+     <entries _body=",255,0,255,255"/>
+     <entries _body=",255,255,128,128"/>
+     <entries _body=",255,0,128,192"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,255,0,255"/>
+     <entries _body=",255,128,64,64"/>
+     <entries _body=",255,255,128,64"/>
+     <entries _body=",255,80,240,120"/>
+     <entries _body=",255,0,64,128"/>
+     <entries _body=",255,128,0,64"/>
+     <entries _body=",255,255,0,128"/>
+     <entries _body=",255,128,128,64"/>
+     <entries _body=",255,128,128,128"/>
+     <entries _body=",255,255,128,255"/>
+     <entries _body=",255,0,64,0"/>
+     <entries _body=",255,0,0,0"/>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,255,128,0"/>
+    </seriesPalette>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;Day&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true"/>
+    <sortKey definition="row[&quot;sort&quot;]"/>
+   </seriesDefinitions>
+   <lineAttributes visible="false">
+    <color _nil="1"/>
+   </lineAttributes>
+   <label visible="true">
+    <caption>
+     <font name="Lato" size="10.0"/>
+     <color _body=",255,255,255,255"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+                        <property name="outputFormat">JS</property>
+                        <property name="inheritColumns">false</property>
+                        <property name="height">4in</property>
+                        <property name="width">489.75pt</property>
+                        <property name="dataSet">FlatFileForecastExport</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Day</property>
+                                <text-property name="displayName">Day</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Day"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Measure</property>
+                                <text-property name="displayName">Measure</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Measure"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">type</property>
+                                <text-property name="displayName">type</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["type"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">sort</property>
+                                <text-property name="displayName">sort</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["sort"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                </cell>
+            </row>
+        </grid>
+        <grid id="1240">
+            <property name="height">5.6in</property>
+            <property name="width">8.3in</property>
+            <expression name="bookmark" type="bre">"GLOBALUSERS"</expression>
+            <column id="1241"/>
+            <column id="1242"/>
+            <row id="1243">
+                <property name="backgroundColor">#800000</property>
+                <cell id="1244">
+                    <property name="paddingTop">1pt</property>
+                    <property name="paddingLeft">1pt</property>
+                    <property name="verticalAlign">middle</property>
+                    <label id="1245">
+                        <property name="fontFamily">"Lato"</property>
+                        <property name="fontSize">24pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#FFFFFF</property>
+                        <property name="paddingTop">1pt</property>
+                        <property name="paddingLeft">10pt</property>
+                        <property name="textAlign">left</property>
+                        <text-property name="text">Global Users:</text-property>
+                    </label>
+                </cell>
+                <cell id="1246">
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <label id="1247">
+                        <property name="fontFamily">"FontAwesome"</property>
+                        <property name="fontSize">58pt</property>
+                        <property name="color">#FFFFFF</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingRight">5pt</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text"></text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="1248">
+                <property name="backgroundColor">#800000</property>
+                <cell id="1249">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="paddingTop">1pt</property>
+                    <property name="paddingLeft">1pt</property>
+                    <property name="textAlign">center</property>
+                    <property name="verticalAlign">middle</property>
+                    <property name="display">inline</property>
+                    <extended-item extensionName="Map" id="1253">
+                        <xml-property name="xmlRepresentation"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<Maps:MapModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Maps="http://www.birt.actuate.com/Maps" xmlns:attribute="http://www.birt.eclipse.org/ChartModelAttribute">
+  <Maps:Type>North America (no Central)</Maps:Type>
+  <Maps:AreaDefinition>
+    <Maps:ShowShadow>false</Maps:ShowShadow>
+    <Maps:Border/>
+    <Maps:Background xsi:type="attribute:ColorDefinition">
+      <Transparency>0</Transparency>
+      <Red>255</Red>
+      <Green>255</Green>
+      <Blue>255</Blue>
+    </Maps:Background>
+  </Maps:AreaDefinition>
+  <Maps:MapDefinition>
+    <Maps:IncludeNameInLabels>false</Maps:IncludeNameInLabels>
+    <Maps:Border>
+      <Style>Solid</Style>
+      <Thickness>1</Thickness>
+      <Color>
+        <Transparency>255</Transparency>
+        <Red>216</Red>
+        <Green>216</Green>
+        <Blue>216</Blue>
+      </Color>
+      <Visible>true</Visible>
+    </Maps:Border>
+    <Maps:Background>
+      <Transparency>255</Transparency>
+      <Red>128</Red>
+      <Green>0</Green>
+      <Blue>0</Blue>
+    </Maps:Background>
+    <Maps:UseHoverColor>false</Maps:UseHoverColor>
+    <Maps:HoverColor>
+      <Transparency>0</Transparency>
+      <Red>255</Red>
+      <Green>255</Green>
+      <Blue>255</Blue>
+    </Maps:HoverColor>
+    <Maps:EntityQuery>
+      <Definition>row[&quot;Ctry&quot;]</Definition>
+      <Grouping>
+        <Enabled>true</Enabled>
+        <GroupType>Text</GroupType>
+        <AggregateExpression>Sum</AggregateExpression>
+      </Grouping>
+    </Maps:EntityQuery>
+    <Maps:ValueQuery>
+      <Definition>row[&quot;NumberOfUsers&quot;]</Definition>
+      <Grouping>
+        <GroupType>Text</GroupType>
+        <AggregateExpression>Sum</AggregateExpression>
+      </Grouping>
+    </Maps:ValueQuery>
+    <Maps:Tooltip>
+      <Text></Text>
+      <Delay>200</Delay>
+    </Maps:Tooltip>
+    <Maps:Hyperlink>
+      <BaseUrl></BaseUrl>
+      <Target></Target>
+      <BaseParameterName></BaseParameterName>
+      <ValueParameterName></ValueParameterName>
+    </Maps:Hyperlink>
+    <Maps:InvokeScript>
+      <Script></Script>
+    </Maps:InvokeScript>
+  </Maps:MapDefinition>
+  <Maps:LegendDefinition>
+    <Maps:Show>false</Maps:Show>
+  </Maps:LegendDefinition>
+  <Maps:FormatDefinition>
+    <Maps:DecimalNumber>2</Maps:DecimalNumber>
+  </Maps:FormatDefinition>
+  <Maps:BaseFontDefinition>
+    <Value></Value>
+    <Font>
+      <Name>Lato Black</Name>
+      <Size>18.0</Size>
+      <Alignment/>
+    </Font>
+    <Color>
+      <Transparency>255</Transparency>
+      <Red>128</Red>
+      <Green>0</Green>
+      <Blue>0</Blue>
+    </Color>
+  </Maps:BaseFontDefinition>
+  <Maps:ColorRange>
+    <Maps:Elements>
+      <Maps:MaxValue>11.0</Maps:MaxValue>
+      <Maps:DisplayValue></Maps:DisplayValue>
+      <Maps:Color>
+        <Transparency>255</Transparency>
+        <Red>255</Red>
+        <Green>255</Green>
+        <Blue>255</Blue>
+      </Maps:Color>
+    </Maps:Elements>
+    <Maps:Gradient>false</Maps:Gradient>
+    <Maps:Color>
+      <Transparency>255</Transparency>
+      <Red>255</Red>
+      <Green>255</Green>
+      <Blue>255</Blue>
+    </Maps:Color>
+  </Maps:ColorRange>
+</Maps:MapModel>
+]]></xml-property>
+                        <property name="inheritColumns">false</property>
+                        <property name="display">inline</property>
+                        <property name="height">4.083333333333333in</property>
+                        <property name="width">4.145833333333333in</property>
+                        <property name="dataSet">Users by Location</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">OfficeLocation</property>
+                                <text-property name="displayName">OfficeLocation</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["OfficeLocation"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NumberOfUsers</property>
+                                <text-property name="displayName">NumberOfUsers</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["NumberOfUsers"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Ctry</property>
+                                <text-property name="displayName">Ctry</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Ctry"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                    <extended-item extensionName="Map" id="1254">
+                        <xml-property name="xmlRepresentation"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<Maps:MapModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Maps="http://www.birt.actuate.com/Maps" xmlns:attribute="http://www.birt.eclipse.org/ChartModelAttribute">
+  <Maps:Type>Europe</Maps:Type>
+  <Maps:AreaDefinition>
+    <Maps:ShowShadow>false</Maps:ShowShadow>
+    <Maps:Border/>
+    <Maps:Background xsi:type="attribute:ColorDefinition">
+      <Transparency>0</Transparency>
+      <Red>255</Red>
+      <Green>255</Green>
+      <Blue>255</Blue>
+    </Maps:Background>
+  </Maps:AreaDefinition>
+  <Maps:MapDefinition>
+    <Maps:ShowLabels>true</Maps:ShowLabels>
+    <Maps:IncludeNameInLabels>false</Maps:IncludeNameInLabels>
+    <Maps:IncludeValueInLabels>true</Maps:IncludeValueInLabels>
+    <Maps:Border>
+      <Style>Solid</Style>
+      <Thickness>1</Thickness>
+      <Color>
+        <Transparency>255</Transparency>
+        <Red>216</Red>
+        <Green>216</Green>
+        <Blue>216</Blue>
+      </Color>
+      <Visible>true</Visible>
+    </Maps:Border>
+    <Maps:Background>
+      <Transparency>255</Transparency>
+      <Red>128</Red>
+      <Green>0</Green>
+      <Blue>0</Blue>
+    </Maps:Background>
+    <Maps:UseHoverColor>false</Maps:UseHoverColor>
+    <Maps:HoverColor>
+      <Transparency>0</Transparency>
+      <Red>255</Red>
+      <Green>255</Green>
+      <Blue>255</Blue>
+    </Maps:HoverColor>
+    <Maps:EntityQuery>
+      <Definition>row[&quot;Ctry&quot;]</Definition>
+      <Grouping>
+        <Enabled>true</Enabled>
+        <GroupType>Text</GroupType>
+        <AggregateExpression>Sum</AggregateExpression>
+      </Grouping>
+    </Maps:EntityQuery>
+    <Maps:ValueQuery>
+      <Definition>row[&quot;NumberOfUsers&quot;]</Definition>
+      <Grouping>
+        <GroupType>Text</GroupType>
+        <AggregateExpression>Sum</AggregateExpression>
+      </Grouping>
+    </Maps:ValueQuery>
+    <Maps:Tooltip>
+      <Text></Text>
+      <Delay>200</Delay>
+    </Maps:Tooltip>
+    <Maps:Hyperlink>
+      <BaseUrl></BaseUrl>
+      <Target></Target>
+      <BaseParameterName></BaseParameterName>
+      <ValueParameterName></ValueParameterName>
+    </Maps:Hyperlink>
+    <Maps:InvokeScript>
+      <Script></Script>
+    </Maps:InvokeScript>
+  </Maps:MapDefinition>
+  <Maps:LegendDefinition>
+    <Maps:Show>false</Maps:Show>
+  </Maps:LegendDefinition>
+  <Maps:FormatDefinition>
+    <Maps:DecimalNumber>2</Maps:DecimalNumber>
+  </Maps:FormatDefinition>
+  <Maps:BaseFontDefinition>
+    <Value></Value>
+    <Font>
+      <Name>Lato Black</Name>
+      <Size>18.0</Size>
+      <Alignment/>
+    </Font>
+    <Color>
+      <Transparency>255</Transparency>
+      <Red>128</Red>
+      <Green>0</Green>
+      <Blue>0</Blue>
+    </Color>
+  </Maps:BaseFontDefinition>
+  <Maps:ColorRange>
+    <Maps:Elements>
+      <Maps:MaxValue>11.0</Maps:MaxValue>
+      <Maps:DisplayValue></Maps:DisplayValue>
+      <Maps:Color>
+        <Transparency>255</Transparency>
+        <Red>255</Red>
+        <Green>255</Green>
+        <Blue>255</Blue>
+      </Maps:Color>
+    </Maps:Elements>
+    <Maps:Gradient>false</Maps:Gradient>
+    <Maps:Color>
+      <Transparency>255</Transparency>
+      <Red>255</Red>
+      <Green>255</Green>
+      <Blue>255</Blue>
+    </Maps:Color>
+  </Maps:ColorRange>
+</Maps:MapModel>
+]]></xml-property>
+                        <property name="inheritColumns">false</property>
+                        <property name="display">inline</property>
+                        <property name="height">4.083333333333333in</property>
+                        <property name="width">3.9895833333333335in</property>
+                        <property name="dataSet">Users by Location</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">OfficeLocation</property>
+                                <text-property name="displayName">OfficeLocation</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["OfficeLocation"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NumberOfUsers</property>
+                                <text-property name="displayName">NumberOfUsers</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["NumberOfUsers"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Ctry</property>
+                                <text-property name="displayName">Ctry</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Ctry"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                </cell>
+            </row>
+        </grid>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="Script_fontAwesome">
+            <expression name="value" type="javascript">"http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"</expression>
+            <property name="type">report</property>
+        </variable-element>
+        <variable-element name="Script_Lato">
+            <expression name="value" type="javascript">"http://fonts.googleapis.com/css?family=Lato"</expression>
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+    <property name="thumbnail">
+        iVBORw0KGgoAAAANSUhEUgAAALgAAADlCAMAAADX/c3cAAADAFBMVEUAAAD////PomuXkHZ/iHzAwMBt
+        gn9ifoK5m2/kqGbW1tbFnm3MzMxzhH6MjHmllHTvrGTdpmje3t6ymHGTjnfFxcXMmWZ7hnyslnL2rmPW
+        pGlmgIHoqmWSjni2mnCdknVsgoCFinq9nG7MmWbmpWsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN+Hl9AAACI0lEQVR4nO3V2Y7aQBQAUYedELZABGHH
+        //+RY5iBsBglaiXVc6MqufvBT0dX3Xbxs65JXZv7+k9Na1vV1Xjd4GXlbcU/dteyk9xl+Qj/EjDhdMLp
+        ej3hbMLphNMJp9vthLNV8MkkNyIl4XTC6YTThYXPZsLZhNMJpxNOFxm+2eRGpCScbrkUziacTjidcLrI
+        8H4/NyIl4XTC6YTTjcfC2YTTCaeLDJ9OcyNSEk4nnE44nXA64XRh4fu9cDbhdMLpKvhqlRuRknA64XTC
+        6cLCm03hbMLphNMJp4sMbzRyI1ISThcWPp8LZxNOJ5wuLHy7Fc4mnE44nXA64XSjUVz4YJAbkZJwOuF0
+        wumE0wmnE04XFn48CmcTTiecroKXZW5ESsLphNMJpwsLb7WEswmnE05XwXu93IiUhNMJpxNOJ5xusSh2
+        u9yIlITTCacTTiecLjJ8NsuNSEk43XAonE04nXA64XSR4ctlbkRKwumE0wmn63SEswmnE04nnC4yfDzO
+        jUjpcBDOJpxOON0TvN1u/zj37dLXa9/fy2W967+DF1VXevEJ4ev1C/hpxYSfwNVTVOrLFgl+nvdp4ucV
+        CH466+/o4jryXNa7fgMv7iYe46icL2cR76h8fA6Lj4sZ5nJ++h9QBd/vb1+EhUdJOF1YeLcrnE04nXC6
+        M7yq+dD80va20VPHp1pPLR4a1tS57XBt/Vj3V0UNu979J+y/4D68dndvewPPryQJnh8+HgAAAABJRU5E
+        rkJggg==
+</property>
+</report>

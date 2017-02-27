@@ -1,0 +1,1717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201603302314</property>
+    <property name="units">in</property>
+    <property name="theme">ThemesReportItems31.Modern</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+        <structure>
+            <property name="fileName">Report Libraries/BIRT Online Maps.rptlibrary</property>
+            <property name="namespace">BIRT Online Maps</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.datatools.connectivity.oda.flatfile" name="CSV" id="512">
+            <property name="URI">Data/Tweets.csv</property>
+            <property name="DELIMTYPE">COMMA</property>
+            <property name="CHARSET">UTF-8</property>
+            <property name="INCLCOLUMNNAME">YES</property>
+            <property name="INCLTYPELINE">NO</property>
+            <property name="TRAILNULLCOLS">NO</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.datatools.connectivity.oda.flatfile.dataSet" name="Tweets" id="513">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">Count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Tweet Time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Tweet Time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DateTime</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">DateTime</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Retweets</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">Retweets</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Likes</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">Likes</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Text</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Text</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">User</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">User</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Handle</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Handle</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Location</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Location</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">latitude</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">latitude</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">longitude</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">longitude</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">URL</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">URL</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Subjectivity</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Subjectivity</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Tone</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Tone</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Count</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Tweet Time</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">DateTime</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Retweets</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">Likes</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">Text</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">User</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">Handle</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">Location</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">latitude</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">longitude</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">URL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">Subjectivity</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">Tone</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CSV</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Count</property>
+                    <property name="nativeName">Count</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ID</property>
+                    <property name="nativeName">ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">Tweet Time</property>
+                    <property name="nativeName">Tweet Time</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">DateTime</property>
+                    <property name="nativeName">DateTime</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">Retweets</property>
+                    <property name="nativeName">Retweets</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">Likes</property>
+                    <property name="nativeName">Likes</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">Text</property>
+                    <property name="nativeName">Text</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">User</property>
+                    <property name="nativeName">User</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">Handle</property>
+                    <property name="nativeName">Handle</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">Location</property>
+                    <property name="nativeName">Location</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">latitude</property>
+                    <property name="nativeName">latitude</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">longitude</property>
+                    <property name="nativeName">longitude</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">URL</property>
+                    <property name="nativeName">URL</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">Subjectivity</property>
+                    <property name="nativeName">Subjectivity</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">Tone</property>
+                    <property name="nativeName">Tone</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "Count", "ID", "Tweet Time", "DateTime", "Retweets", "Likes", "Text", "User", "Handle", "Location", "latitude", "longitude", "URL", "Subjectivity", "Tone" from "Data/NFL_Tweets.csv" : {"Count","Count",INT;"ID","ID",STRING;"Tweet Time","Tweet Time",STRING;"DateTime","DateTime",TIMESTAMP;"Retweets","Retweets",INT;"Likes","Likes",INT;"Text","Text",STRING;"User","User",STRING;"Handle","Handle",STRING;"Location","Location",STRING;"latitude","latitude",STRING;"longitude","longitude",STRING;"URL","URL",STRING;"Subjectivity","Subjectivity",STRING;"Tone","Tone",STRING}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Count</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Count</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ID</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ID</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tweet Time</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tweet Time</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DateTime</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DateTime</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Retweets</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Retweets</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Likes</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Likes</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Text</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Text</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>User</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>User</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Handle</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Handle</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Location</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Location</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>latitude</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>latitude</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>longitude</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>longitude</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>URL</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>URL</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Subjectivity</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Subjectivity</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tone</design:name>
+              <design:position>15</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tone</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="134">
+            <property name="fontFamily">"Lato"</property>
+            <property name="textAlign">center</property>
+            <column id="135"/>
+            <row id="331">
+                <cell id="332">
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">5pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">5pt</property>
+                    <label id="333">
+                        <property name="fontSize">24pt</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">Tweet Map</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="136">
+                <cell id="137">
+                    <property name="paddingTop">25pt</property>
+                    <property name="paddingLeft">50pt</property>
+                    <property name="paddingBottom">0pt</property>
+                    <property name="paddingRight">50pt</property>
+                    <grid id="309">
+                        <column id="310"/>
+                        <row id="311">
+                            <cell id="312">
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <text name="BIRT Online Maps - 1 - Code" id="317" extends="BIRT Online Maps.BIRT Online Maps - 1 - Code">
+                                    <property name="contentType">html</property>
+                                    <text-property name="content"><![CDATA[<div id="_$_dummyDiv12345"></div>
+<script>
+var _$_id = "";
+if (this._viewer) {
+    _$_id = this._viewer.getId() + "_";
+} else if (window["actuate"] !== undefined &amp;&amp; actuate.getViewer !== undefined) {
+    var v = actuate.getViewer("_$_dummyDiv12345");
+    if (v)
+        _$_id = v.getId() + "_";
+} else if (document.getElementsByClassName) {
+    if (document.getElementsByClassName("actuateViewerContainer").length == 1)
+        _$_id = actuate.getViewer(document.getElementsByClassName("actuateViewerContainer")[0]).getId() + "_";      
+} else {
+    var exp = RegExp("\\bactuateViewerContainer\\b");
+    var items = document.body.getElementsByTagName('*');
+    var cls;
+    for (var i = 0; i < items.length; i++) {
+        cls = items[i].getAttribute("class") || items[i].className;
+        if (cls &amp;&amp; exp.test(cls)) {
+            _$_id = actuate.getViewer(items[i]).getId() + "_";
+            break;
+        }
+    }
+}
+
+var _$ = function (name) {
+    return document.getElementById(_$_id + name);
+}
+
+if (window["$A"] === undefined) {
+    window.$A = function (iterable) {
+        if (!iterable) return [];
+        if (iterable.toArray) return iterable.toArray();
+        var length = iterable.length || 0, results = new Array(length);
+        while (length--) results[length] = iterable[length];
+        return results;
+    }
+}
+
+if (!Function.prototype.bind) {
+    Function.prototype.bind = function() {
+        if (arguments.length < 2 &amp;&amp; typeof arguments[0] == "undefined") return this;
+        var __method = this, args = $A(arguments), object = args.shift();
+        return function() {
+            return __method.apply(object, args.concat($A(arguments)));
+        }
+    }
+}
+
+if (window["actuate"] === undefined)
+    window["actuate"] = {};
+if (actuate["birt"] === undefined)
+    actuate.birt = {};
+
+actuate.birt.util = {
+    getColorCode: function(colorCode, defaultColorCode) {
+        if (colorCode == null)
+            return defaultColorCode;
+        colorCode = colorCode.replace(/\s+/g, "").toLowerCase();
+        if (colorCode == "")
+            return defaultColorCode;
+
+        if (colorCode.substring(0, 1) == "#")
+            return colorCode.substring(1);
+
+        if (colorCode.substring(0, 4) == "rgb(") {
+            colorCode = colorCode.substring(4, colorCode.length - 1);
+            var colors = colorCode.split(",");
+            return this.decToHex(colors[0]) + this.decToHex(colors[1]) + this.decToHex(colors[2]);
+        }
+
+        switch (colorCode) {
+            case "auto": return "000000";
+            case "aqua": return "00FFFF";
+            case "black": return "000000";
+            case "blue": return "0000FF";
+            case "fuchsia": return "FF00FF";
+            case "gray": return "808080";
+            case "green": return "008000";
+            case "lime": return "00FF00";
+            case "maroon": return "800000";
+            case "navy": return "000080";
+            case "olive": return "808000";
+            case "orange": return "FFA500";
+            case "purple": return "800080";
+            case "red": return "FF0000";
+            case "silver": return "C0C0C0";
+            case "teal": return "008080";
+            case "white": return "FFFFFF";
+            case "yellow": return "FFFF00";
+            default: return colorCode.length == 6 ? colorCode : defaultColorCode;
+        }
+    },
+    
+    decToHex: function(dec) {
+        var hex = parseInt(dec).toString(16);
+        if (hex.length == 1)
+            hex = "0" + hex;
+        return hex;
+    },
+
+    loadResources: function(opts) {
+        // write something to the document first so that we have the screen rendered
+        var div = document.createElement("div");
+        div.innerHTML = " ";
+        document.body.appendChild(div);
+        
+        if (opts.styles) {
+            for (var i = 0; i < opts.styles.length; i++) {
+                var link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.type = "text/css";
+                link.href = opts.styles[i];
+                document.body.appendChild(link);
+            }
+        }
+
+        if (opts.scripts) {
+            for (var i = 0; i < opts.scripts.length; i++) {
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.src = opts.scripts[i];
+
+                if (opts.callback) {
+                    script.onreadystatechange = script.onload = function() {
+                        var state = script.readyState;
+                        if (window[opts.check] !== undefined &amp;&amp; !opts.callback.done &amp;&amp; (!state || /loaded|complete/.test(state))) {
+                            opts.callback.done = true;
+                            opts.callback();
+                        }
+                    };
+                }
+
+                document.body.appendChild(script);
+            }
+        }
+    }
+};
+
+actuate.birt.maps = {
+    divName: "actuate-birt-map",
+    addressValueElemPrefix: "Address_",  
+    latElemPrefix: "Lat_",
+    lonElemPrefix: "Lon_",
+    infoElemPrefix: "Info_",
+    pinElemPrefix: "Pin_", 
+    addresses: [],
+    locations: [],
+    areas: [],
+
+    resetPinLetter: false,
+    pinLetters: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&amp;*()+[]{}<>",    
+
+    addAddress: function(id, addressValue, options) { //info, group, generateOnly) {
+        if (addressValue === undefined || addressValue == null) {
+            var addressValueElem = _$(this.addressValueElemPrefix + id);
+            if (addressValueElem)
+                addressValue = addressValueElem.innerHTML; 
+            else
+                addressValue = id;
+        }
+        
+        if (options === undefined || options === null)
+        	options = {};
+        	
+        var info = null;
+        if (typeof options == "string") {
+   	    	info = options;
+       	} else if (options.innerHTML !== undefined) {
+       		info = options.innerHTML;
+       	} else if (options.info !== undefined) {
+       		info = options.info;
+       	} 
+        
+        if (info == null) {
+            var infoElem = _$(this.infoElemPrefix + id);
+            if (infoElem)
+                info = infoElem.innerHTML;
+            else
+                info = addressValue;
+        }
+
+        var address = new Object();
+        address.id = id;
+        address.value = addressValue;
+        address.infoHTML = info;
+        address.group = options.group;
+        address.generateOnly = options.generateOnly;
+        if (options.circle)
+        	address.circle = this.createCircleObject(id, this.addresses.length, options.circle);
+        else
+	        address.pin = this.createPinObject(id, this.addresses.length);
+
+        this.addresses.push(address);
+        return address;
+    },
+
+    addLocation: function(id, lat, lon, options) {
+        if (!lat) {
+            var latElem = _$(this.latElemPrefix + id);
+            if (latElem)
+                lat = latElem.innerHTML; else
+                return;
+        }
+
+        if (!lon) {
+            var lonElem = _$(this.lonElemPrefix + id);
+            if (lonElem)
+                lon = lonElem.innerHTML; else
+                return;
+        }                
+        
+        if (options === undefined || options === null)
+        	options = {};
+        	
+        var info = null;
+        if (typeof options == "string") {
+   	    	info = options;
+       	} else if (options.innerHTML !== undefined) {
+       		info = options.innerHTML;
+       	} else if (options.info !== undefined) {
+       		info = options.info;
+       	} 
+        
+        if (info == null) {
+            var infoElem = _$(this.infoElemPrefix + id);
+            if (infoElem)
+                info = infoElem.innerHTML;
+            else
+                info = lat + ", " + lon;
+        }        
+        
+        var loc = new Object();
+        loc.id = id;
+        loc.lat = lat;
+        loc.lon = lon;
+        loc.infoHTML = info;
+        loc.group = options.group;
+        loc.generateOnly = options.generateOnly;        
+        if (options.circle)
+        	loc.circle = this.createCircleObject(id, this.locations.length, options.circle);
+        else
+	        loc.pin = this.createPinObject(id, this.locations.length);
+	        
+	    if (options.pinColor)
+	    	loc.pin.pinColor = options.pinColor;
+
+        this.locations.push(loc);
+        return loc;
+
+    },
+
+    createPinObject: function(id, idx) {
+        var pin = {};
+        var pinElem = _$(this.pinElemPrefix + id);
+        if (pinElem) {
+            if (this.resetPinLetter &amp;&amp; idx < this.pinLetters.length)
+                pinElem.innerHTML = this.pinLetters.substring(idx, idx + 1);
+            pin.letter = pinElem.innerText;
+            pin.letterColor = pinElem.style.color;
+            pin.pinColor = pinElem.style.backgroundColor;
+        }
+        return pin;
+    },
+    
+    createCircleObject: function(id, idx, options) {
+    	var circle = {
+			strokeColor: options.strokeColor ? options.strokeColor : "#000000",
+			strokeOpacity: options.strokeOpacity ? options.strokeOpacity : 0.8,
+			strokeWeight: options.strokeWeight ? options.strokeWeight : 1,
+			fillColor: options.fillColor ? options.fillColor : "#FD7567",
+			fillOpacity: options.fillOpacity ? options.fillOpacity : 0.5,
+			radius: options.radius ? options.radius : 500    		
+    	};
+    	
+    	var circleElem = _$(this.pinElemPrefix + id);
+    	if (circleElem) {
+    		circle.strokeColor = actuate.birt.util.getColorCode(circleElem.style.color, circle.strokeColor);
+    		circle.fillColor = actuate.birt.util.getColorCode(circleElem.style.backgroundColor, circle.fillColor);
+    	}
+    	return circle;
+    },
+
+    initArea: function(id, strokeColor, strokeWeight, strokeOpacity, fillColor, fillOpacity, options) {      
+        if (options === undefined || options === null)
+        	options = {};
+        	
+        var info = null;
+        if (typeof options == "string") {
+   	    	info = options;
+       	} else if (options.innerHTML !== undefined) {
+       		info = options.innerHTML;
+       	} else if (options.info !== undefined) {
+       		info = options.info;
+       	} 
+        
+        if (info == null) {
+            var infoElem = _$(this.infoElemPrefix + id);
+            if (infoElem)
+                info = infoElem.innerHTML;
+            else
+                info = options.group ? id + " - " + group : id;
+        }   
+            
+        if (!fillColor) {
+        	var pinElem = _$(this.pinElemPrefix + id);
+        	if (pinElem) {
+        		if (this.resetPinLetter &amp;&amp; idx < this.pinLetters.length) {
+        			var idx = this.areas.length;
+	                pinElem.innerHTML = this.pinLetters.substring(idx, idx + 1);
+	            }
+	            fillColor = pinElem.style.backgroundColor;
+        	} else {
+        		fillColor = "#0000FF";
+        	}
+        }  
+        
+        var area = new Object();
+        area.id = id;
+        area.points = [];
+        area.strokeColor = strokeColor;
+        area.strokeWeight = strokeWeight;
+        area.strokeOpacity = strokeOpacity;
+        area.fillColor = fillColor;
+        area.fillOpacity = fillOpacity;
+        area.infoHTML = info;
+        area.group = options.group;
+        area.generateOnly = options.generateOnly;
+        this.areas.push(area);
+        return area;
+    },
+    
+    addPointsToArea: function(points, inverted) {
+        for (var i = 0; i < points.length; i++) {
+            if (points[i]["lat"] !== undefined &amp;&amp; points[i]["lon"] !== undefined) {
+                this.addPointToArea(points[i]["lat"], points[i]["lon"]);
+            } else {
+                if (inverted)
+                    this.addPointToArea(points[i][1], points[i][0]);
+                else
+                    this.addPointToArea(points[i][0], points[i][1]);
+            }
+        }
+    },
+
+    addPointToArea: function(lat, lon) {
+        this.areas[this.areas.length - 1].points.push({lat: lat, lon: lon});
+    }
+};
+
+actuate.birt.maps.google = {
+    map: null,
+    geoCoder: null,
+    initZoom: 4,
+    initLat: 38,
+    initLon: -92,     
+    maxLng: -1000,
+    maxLat: -1000,
+    minLng: 0,
+    minLat: 0,
+    retryAddresses: [],    
+    processedAddresses: 0,
+    geoCodingStart: 0,
+    geoCodingMaxZoomTime: 2000,
+    geoCodingMaxTime: 10000,
+    geoCodingRetryTime: 500,
+
+    start: function() {
+        if (window["google"] === undefined || google["maps"] === undefined) {
+            var autoloadJSON = "{modules:[{name:\"maps\",version:3,callback:\"actuate.birt.maps.google.createMap\",other_params:\"sensor=false\"}]}";
+            var scriptSrc = "http://www.google.com/jsapi?autoload=" + encodeURIComponent(autoloadJSON);
+            actuate.birt.util.loadResources({scripts: [scriptSrc]});
+        } else {
+            actuate.birt.maps.google.loadMap.bind(actuate.birt.maps.google)();
+        }
+    },
+
+    createMap: function() {
+        actuate.birt.maps.google.loadMap.bind(actuate.birt.maps.google)();
+    },
+
+    loadMap: function() {
+        var mapOptions = {
+            zoom: this.initZoom,
+            center: new google.maps.LatLng(this.initLat, this.initLon),
+            scrollwheel: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL, position: google.maps.ControlPosition.TOP_RIGHT}            
+        };
+        this.map = new google.maps.Map(document.getElementById(actuate.birt.maps.divName), mapOptions);
+        
+        this.infoWindow = new google.maps.InfoWindow();
+
+        var i;
+        if (actuate.birt.maps.addresses != null &amp;&amp; actuate.birt.maps.addresses.length > 0) {
+            this.geoCoder = new google.maps.Geocoder();
+            this.geoCodingStart = new Date().getTime();
+            for (i = 0; i < actuate.birt.maps.addresses.length; i++) {
+                this.loadAddress(actuate.birt.maps.addresses[i]);
+            }
+        }
+
+        if (actuate.birt.maps.locations != null &amp;&amp; actuate.birt.maps.locations.length > 0) {
+            for (i = 0; i < actuate.birt.maps.locations.length; i++) {
+                this.loadLocation(actuate.birt.maps.locations[i]);
+            }
+        }
+
+        if (actuate.birt.maps.areas != null &amp;&amp; actuate.birt.maps.areas.length > 0) {
+            for (i = 0; i < actuate.birt.maps.areas.length; i++) {
+                this.loadArea(actuate.birt.maps.areas[i]);
+            }
+        }
+
+        this.finishLoading();
+    },
+
+    loadRetryAddresses: function() {
+        var elapsed = new Date().getTime() - this.geoCodingStart;
+        if (elapsed > this.geoCodingMaxZoomTime)
+            this.finishLoading();
+        if (elapsed > this.geoCodingMaxTime)
+            return;     
+            
+        this.processedAddresses = this.processedAddresses - this.retryAddresses.length;
+        var tmpAddresses = this.retryAddresses;
+        this.retryAddresses = [];
+        for (var i = 0; i < tmpAddresses.length; i++) {
+            this.loadAddress(tmpAddresses[i]);
+        }
+    },
+
+    loadAddress: function(address) {
+        this.geoCoder.geocode({address: address.value}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                this.adjustMinMaxBoundaries(results[0].geometry.location);
+                this.createPointOverlay(address, results[0].geometry.location);           
+            } else {
+                this.retryAddresses.push(address);
+            }
+
+            this.processedAddresses++;
+            if (this.processedAddresses >= actuate.birt.maps.addresses.length) {
+                if (this.retryAddresses.length > 0)
+                    setTimeout(function() {this.loadRetryAddresses()}.bind(this), this.geoCodingRetryTime);
+                else
+                    this.finishLoading();
+            }
+        }.bind(this));
+    },
+
+    loadLocation: function(loc) {
+        var point = new google.maps.LatLng(loc.lat, loc.lon);
+        this.adjustMinMaxBoundaries(point);
+        this.createPointOverlay(loc, point);
+    },
+
+    loadArea: function(area) {
+        if (!area.points)
+            return;
+
+        var latLngPoints = [];
+        for (var i = 0; i < area.points.length; i++) {
+            latLngPoints.push(new google.maps.LatLng(area.points[i].lat, area.points[i].lon));
+        }
+
+        var polygonOptions = {
+            map: area.generateOnly ? null : this.map,
+            paths: latLngPoints,
+            fillColor: area.fillColor,
+            fillOpacity: area.fillOpacity,
+            strokeColor: area.strokeColor,
+            strokeOpacity: area.strokeOpacity,
+            strokeWeight: area.strokeWeight
+        };
+        var polygon = new google.maps.Polygon(polygonOptions);
+        area.overlay = polygon;
+        
+        if (area.infoHTML) {                    
+            google.maps.event.addListener(polygon, 'click', function(evt) {
+                var contentElem = document.createElement("div");
+                contentElem.innerHTML = area.infoHTML;
+                this.infoWindow.close();  
+                this.infoWindow.setContent(contentElem.firstChild);
+                this.infoWindow.setPosition(evt.latLng);
+                this.infoWindow.open(this.map);
+            }.bind(this));
+        }        
+        
+        var bounds = this.getPolygonBounds(polygon);
+        this.adjustMinMaxBoundaries(bounds.getNorthEast());
+        this.adjustMinMaxBoundaries(bounds.getSouthWest());
+    },
+
+    createPointOverlay: function(item, point) {
+        var overlay;
+        
+        if (item.circle) {
+	        var circleOptions = {
+				map: item.generateOnly ? null : this.map,
+				center: point,
+				clickable: item.infoHTML ? true : false,
+				strokeColor: item.circle.strokeColor,
+				strokeOpacity: item.circle.strokeOpacity,
+				strokeWeight: item.circle.strokeWeight,
+				fillColor: item.circle.fillColor,
+				fillOpacity: item.circle.fillOpacity,
+				radius: item.circle.radius
+			}
+			overlay = new google.maps.Circle(circleOptions);
+
+		} else {        
+    	    var title = item.value ? item.value : item.infoHTML &amp;&amp; item.infoHTML.length < 50 ? item.infoHTML : null;        
+        	var markerOptions = {
+            	map: item.generateOnly ? null : this.map,
+	            position: point,
+    	        icon: new google.maps.MarkerImage(this.createPinIconURL(item)),            
+        	    shadow: new google.maps.MarkerImage(this.createPinShadowURL(item), null, null, new google.maps.Point(13, 37)),
+            	title: title
+	        };        
+    	    overlay = new google.maps.Marker(markerOptions);
+        }
+                
+        item.overlay = overlay;
+
+        if (item.infoHTML) {        
+            google.maps.event.addListener(overlay, 'click', function(evt) {
+                var contentElem = document.createElement("div");
+                contentElem.innerHTML = item.infoHTML;  
+                this.infoWindow.close();
+                this.infoWindow.setContent(contentElem.firstChild);
+                if (overlay.position) {
+                	this.infoWindow.open(this.map, overlay);
+                } else {
+	                this.infoWindow.setPosition(evt.latLng);
+    	            this.infoWindow.open(this.map);
+                }
+            }.bind(this));
+        }
+
+        return overlay;
+    },
+    
+    createPinIconURL: function(item) {
+        if (item.iconURL &amp;&amp; item.iconURL != "") {
+            return item.iconURL;
+        } else if (item.googleIconURL &amp;&amp; item.googleIconURL != "") {
+            return "http://www.google.com/intl/en_us/mapfiles/ms/micons/" + item.googleIconURL;
+        } else if (item.pin) {
+            var letter = (item.pin.letter &amp;&amp; item.pin.letter != "" &amp;&amp; item.pin.letter != "&amp;nbsp;") ? item.pin.letter : " ";
+            var pinColor = actuate.birt.util.getColorCode(item.pin.pinColor, "FD7567");
+            var letterColor = actuate.birt.util.getColorCode(item.pin.letterColor, "000000");
+
+            return "http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=" + encodeURIComponent(letter) + "|" + pinColor + "|" + letterColor;
+        } else {
+            return "http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=+|FD7567|000000";
+        }
+    },
+    
+    createPinShadowURL: function(item) {
+        return "http://chart.apis.google.com/chart?chst=d_map_pin_shadow";
+    },    
+    
+    addAllOverlaysForGroup: function(group) {
+        this.addOverlayArrayForGroup(actuate.birt.maps.addresses, group);
+        this.addOverlayArrayForGroup(actuate.birt.maps.locations, group);
+        this.addOverlayArrayForGroup(actuate.birt.maps.areas, group);       
+    },
+    
+    addOverlayArrayForGroup: function(itemArray, group) {
+        if (itemArray != null &amp;&amp; itemArray.length > 0) {
+            for (i = 0; i < itemArray.length; i++) {
+                this.addOverlayForGroup(itemArray[i], group);
+            }
+        }
+    },
+    
+    addOverlayForGroup: function(item, group) {
+        if (item.group == group &amp;&amp; item.overlay)
+            item.overlay.setMap(this.map);    
+    },
+    
+    removeAllOverlaysForGroup: function(group) {
+        this.removeOverlayArrayForGroup(actuate.birt.maps.addresses, group);
+        this.removeOverlayArrayForGroup(actuate.birt.maps.locations, group);
+        this.removeOverlayArrayForGroup(actuate.birt.maps.areas, group);
+    },
+    
+    removeOverlayArrayForGroup: function(itemArray, group) {
+        if (itemArray != null &amp;&amp; itemArray.length > 0) {
+            for (i = 0; i < itemArray.length; i++) {
+                this.removeOverlayForGroup(itemArray[i], group);
+            }
+        }
+    },
+    
+    removeOverlayForGroup: function(item, group) {
+        if (item.group == group &amp;&amp; item.overlay)
+            item.overlay.setMap(null);
+    },
+    
+    getPolygonBounds: function(polygon) {
+        var bounds = new google.maps.LatLngBounds;
+        polygon.getPath().forEach(function(latLng){bounds.extend(latLng);});
+        return bounds;
+    },
+
+    adjustMinMaxBoundaries: function(point) {
+        if (this.maxLng == -1000) {
+            this.maxLng = point.lng();
+            this.minLng = point.lng();
+            this.maxLat = point.lat();
+            this.minLat = point.lat();
+            return;
+        }
+
+        if (point.lng() > this.maxLng)
+            this.maxLng = point.lng();
+
+        if (point.lng() < this.minLng)
+            this.minLng = point.lng();
+
+        if (point.lat() > this.maxLat)
+            this.maxLat = point.lat();
+
+        if (point.lat() < this.minLat)
+            this.minLat = point.lat();
+    },
+
+    finishLoading: function() {
+        if (this.maxLng == -1000)
+            return;
+
+        var bounds = new google.maps.LatLngBounds(new google.maps.LatLng(this.minLat, this.minLng), new google.maps.LatLng(this.maxLat, this.maxLng));
+        google.maps.event.addListenerOnce(this.map, "bounds_changed", function(){
+                if (this.map.getZoom() > 15)
+                    this.map.setZoom(15);
+            }.bind(this)
+        );        
+        this.map.fitBounds(bounds);
+    }
+};
+</script>]]></text-property>
+                                </text>
+                                <text name="BIRT Online Maps - 1 - Container" id="318" extends="BIRT Online Maps.BIRT Online Maps - 1 - Container">
+                                    <property name="contentType">html</property>
+                                    <text-property name="content"><![CDATA[<div id="actuate-birt-map" style="width:100%;height:600px;text-align:center;">
+	Loading Map<br>Please Wait...
+</div>
+
+]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                        <row id="313">
+                            <cell id="314">
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <table id="251">
+                                    <property name="borderBottomStyle">none</property>
+                                    <property name="borderLeftStyle">none</property>
+                                    <property name="borderRightStyle">none</property>
+                                    <property name="borderTopStyle">none</property>
+                                    <property name="dataSet">Tweets</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">author</property>
+                                            <text-property name="displayName">author</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["User"]</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">publish_date</property>
+                                            <text-property name="displayName">publish_date</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["DateTime"]</expression>
+                                            <property name="dataType">date-time</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">url</property>
+                                            <text-property name="displayName">url</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["URL"]</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">body</property>
+                                            <text-property name="displayName">body</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Text"]</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">subjectivity</property>
+                                            <text-property name="displayName">subjectivity</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Subjectivity"]</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">tone</property>
+                                            <text-property name="displayName">tone</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Tone"]</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">latitude</property>
+                                            <text-property name="displayName">latitude</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["latitude"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">longitude</property>
+                                            <text-property name="displayName">longitude</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["longitude"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Handle</property>
+                                            <text-property name="displayName">Handle</text-property>
+                                            <expression name="expression" type="javascript">"@" + dataSetRow["Handle"]</expression>
+                                            <property name="dataType">string</property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Retweets</property>
+                                            <text-property name="displayName">Retweets</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Retweets"]</expression>
+                                            <property name="dataType">integer</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Likes</property>
+                                            <text-property name="displayName">Likes</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["Likes"]</expression>
+                                            <property name="dataType">integer</property>
+                                        </structure>
+                                    </list-property>
+                                    <column id="322"/>
+                                    <detail>
+                                        <row id="271">
+                                            <property name="textAlign">left</property>
+                                            <cell id="320">
+                                                <property name="fontFamily">"Lato"</property>
+                                                <property name="borderBottomStyle">none</property>
+                                                <property name="borderLeftStyle">none</property>
+                                                <property name="borderRightStyle">none</property>
+                                                <property name="borderTopStyle">none</property>
+                                                <property name="paddingTop">1pt</property>
+                                                <property name="paddingLeft">3pt</property>
+                                                <property name="paddingBottom">1pt</property>
+                                                <property name="paddingRight">3pt</property>
+                                                <grid id="508">
+                                                    <property name="display">none</property>
+                                                    <expression name="bookmark" type="javascript">"Info_" + row.__rownum</expression>
+                                                    <column id="509"/>
+                                                    <row id="510">
+                                                        <cell id="511">
+                                                            <grid id="474">
+                                                                <property name="borderBottomColor">#999999</property>
+                                                                <property name="borderBottomStyle">solid</property>
+                                                                <property name="borderBottomWidth">thin</property>
+                                                                <property name="borderLeftColor">#999999</property>
+                                                                <property name="borderLeftStyle">solid</property>
+                                                                <property name="borderLeftWidth">thin</property>
+                                                                <property name="borderRightColor">#999999</property>
+                                                                <property name="borderRightStyle">solid</property>
+                                                                <property name="borderRightWidth">thin</property>
+                                                                <property name="borderTopColor">#999999</property>
+                                                                <property name="borderTopStyle">solid</property>
+                                                                <property name="borderTopWidth">thin</property>
+                                                                <property name="width">400px</property>
+                                                                <column id="475">
+                                                                    <property name="width">50px</property>
+                                                                </column>
+                                                                <column id="476"/>
+                                                                <column id="546">
+                                                                    <property name="width">25px</property>
+                                                                </column>
+                                                                <column id="573">
+                                                                    <property name="textAlign">center</property>
+                                                                    <property name="width">25px</property>
+                                                                </column>
+                                                                <column id="503">
+                                                                    <property name="width">25px</property>
+                                                                </column>
+                                                                <row id="478">
+                                                                    <cell id="479">
+                                                                        <property name="colSpan">1</property>
+                                                                        <property name="rowSpan">2</property>
+                                                                        <property name="paddingTop">5px</property>
+                                                                        <property name="paddingLeft">5px</property>
+                                                                        <property name="paddingBottom">5px</property>
+                                                                        <property name="paddingRight">5px</property>
+                                                                        <property name="verticalAlign">middle</property>
+                                                                        <image id="486">
+                                                                            <property name="height">50px</property>
+                                                                            <property name="width">50px</property>
+                                                                            <property name="source">embed</property>
+                                                                            <property name="imageName">twitter.png</property>
+                                                                        </image>
+                                                                    </cell>
+                                                                    <cell id="480">
+                                                                        <property name="colSpan">1</property>
+                                                                        <property name="rowSpan">2</property>
+                                                                        <property name="paddingTop">5pt</property>
+                                                                        <property name="paddingLeft">5pt</property>
+                                                                        <property name="paddingBottom">5pt</property>
+                                                                        <property name="paddingRight">5pt</property>
+                                                                        <property name="textAlign">left</property>
+                                                                        <property name="verticalAlign">top</property>
+                                                                        <data id="507">
+                                                                            <property name="fontSize">12pt</property>
+                                                                            <property name="color">#000000</property>
+                                                                            <property name="resultSetColumn">author</property>
+                                                                        </data>
+                                                                        <data id="514">
+                                                                            <property name="color">#C0C0C0</property>
+                                                                            <property name="resultSetColumn">Handle</property>
+                                                                        </data>
+                                                                        <data id="506">
+                                                                            <property name="fontSize">9pt</property>
+                                                                            <property name="color">#C0C0C0</property>
+                                                                            <property name="resultSetColumn">publish_date</property>
+                                                                        </data>
+                                                                    </cell>
+                                                                    <cell id="542">
+                                                                        <property name="colSpan">1</property>
+                                                                        <property name="rowSpan">1</property>
+                                                                        <property name="paddingTop">5pt</property>
+                                                                        <property name="paddingLeft">5pt</property>
+                                                                        <property name="paddingBottom">2px</property>
+                                                                        <property name="paddingRight">5pt</property>
+                                                                        <property name="textAlign">center</property>
+                                                                        <property name="verticalAlign">bottom</property>
+                                                                        <image id="538">
+                                                                            <property name="height">20px</property>
+                                                                            <property name="width">25px</property>
+                                                                            <property name="source">embed</property>
+                                                                            <property name="imageName">TwitterRT.png</property>
+                                                                        </image>
+                                                                    </cell>
+                                                                    <cell id="567">
+                                                                        <property name="paddingTop">5pt</property>
+                                                                        <property name="paddingLeft">5pt</property>
+                                                                        <property name="paddingBottom">2px</property>
+                                                                        <property name="paddingRight">5pt</property>
+                                                                        <property name="verticalAlign">bottom</property>
+                                                                        <image id="541">
+                                                                            <property name="height">20px</property>
+                                                                            <property name="width">25px</property>
+                                                                            <property name="source">embed</property>
+                                                                            <property name="imageName">TwitterHeart.png</property>
+                                                                        </image>
+                                                                    </cell>
+                                                                    <cell id="566">
+                                                                        <property name="paddingTop">5pt</property>
+                                                                        <property name="paddingLeft">5pt</property>
+                                                                        <property name="paddingBottom">0pt</property>
+                                                                        <property name="paddingRight">5pt</property>
+                                                                        <property name="textAlign">right</property>
+                                                                        <property name="verticalAlign">bottom</property>
+                                                                        <image id="504">
+                                                                            <property name="height">25px</property>
+                                                                            <property name="width">25px</property>
+                                                                            <property name="source">embed</property>
+                                                                            <property name="imageName">TwitterArrow.png</property>
+                                                                            <list-property name="action">
+                                                                                <structure>
+                                                                                    <property name="linkType">hyperlink</property>
+                                                                                    <property name="toolTip">Go to twitter</property>
+                                                                                    <expression name="uri" type="javascript">row["url"]</expression>
+                                                                                    <property name="targetWindow">_blank</property>
+                                                                                </structure>
+                                                                            </list-property>
+                                                                        </image>
+                                                                    </cell>
+                                                                </row>
+                                                                <row id="547">
+                                                                    <cell id="553">
+                                                                        <property name="paddingTop">0pt</property>
+                                                                        <property name="paddingLeft">5pt</property>
+                                                                        <property name="paddingBottom">5pt</property>
+                                                                        <property name="paddingRight">5pt</property>
+                                                                        <property name="textAlign">center</property>
+                                                                        <property name="verticalAlign">top</property>
+                                                                        <data id="539">
+                                                                            <property name="fontWeight">bold</property>
+                                                                            <property name="color">#C0C0C0</property>
+                                                                            <property name="textAlign">center</property>
+                                                                            <property name="resultSetColumn">Retweets</property>
+                                                                        </data>
+                                                                    </cell>
+                                                                    <cell id="568">
+                                                                        <property name="paddingTop">0pt</property>
+                                                                        <property name="paddingLeft">5pt</property>
+                                                                        <property name="paddingBottom">5pt</property>
+                                                                        <property name="paddingRight">5pt</property>
+                                                                        <property name="verticalAlign">top</property>
+                                                                        <data id="540">
+                                                                            <property name="fontWeight">bold</property>
+                                                                            <property name="color">#C0C0C0</property>
+                                                                            <property name="textAlign">center</property>
+                                                                            <property name="resultSetColumn">Likes</property>
+                                                                        </data>
+                                                                    </cell>
+                                                                    <cell id="554">
+                                                                        <property name="paddingTop">0pt</property>
+                                                                        <property name="paddingLeft">5pt</property>
+                                                                        <property name="paddingBottom">5pt</property>
+                                                                        <property name="paddingRight">5pt</property>
+                                                                        <property name="textAlign">left</property>
+                                                                        <property name="verticalAlign">top</property>
+                                                                    </cell>
+                                                                </row>
+                                                                <row id="482">
+                                                                    <cell id="483">
+                                                                        <property name="colSpan">5</property>
+                                                                        <property name="rowSpan">1</property>
+                                                                        <property name="paddingTop">5pt</property>
+                                                                        <property name="paddingLeft">5pt</property>
+                                                                        <property name="paddingBottom">5pt</property>
+                                                                        <property name="paddingRight">5pt</property>
+                                                                        <data id="505">
+                                                                            <property name="fontSize">12pt</property>
+                                                                            <property name="color">#000000</property>
+                                                                            <property name="textAlign">left</property>
+                                                                            <property name="resultSetColumn">body</property>
+                                                                        </data>
+                                                                    </cell>
+                                                                </row>
+                                                                <row id="519">
+                                                                    <cell id="520">
+                                                                        <property name="colSpan">5</property>
+                                                                        <property name="rowSpan">1</property>
+                                                                        <property name="paddingTop">5pt</property>
+                                                                        <property name="paddingLeft">5pt</property>
+                                                                        <property name="paddingBottom">5pt</property>
+                                                                        <property name="paddingRight">5pt</property>
+                                                                        <list-property name="highlightRules">
+                                                                            <structure>
+                                                                                <property name="operator">is-null</property>
+                                                                                <property name="backgroundColor">#3D4C53</property>
+                                                                                <property name="fontWeight">bold</property>
+                                                                                <property name="color">#FFFFFF</property>
+                                                                                <expression name="testExpr" type="javascript">row["tone"]</expression>
+                                                                            </structure>
+                                                                            <structure>
+                                                                                <property name="operator">eq</property>
+                                                                                <property name="backgroundColor">#F14440</property>
+                                                                                <property name="fontWeight">bold</property>
+                                                                                <property name="color">#FFFFFF</property>
+                                                                                <expression name="testExpr" type="javascript">row["tone"]</expression>
+                                                                                <simple-property-list name="value1">
+                                                                                    <value type="javascript">"Negative"</value>
+                                                                                </simple-property-list>
+                                                                            </structure>
+                                                                            <structure>
+                                                                                <property name="operator">eq</property>
+                                                                                <property name="backgroundColor">#70B7B9</property>
+                                                                                <property name="fontWeight">bold</property>
+                                                                                <property name="color">#3D4C53</property>
+                                                                                <expression name="testExpr" type="javascript">row["tone"]</expression>
+                                                                                <simple-property-list name="value1">
+                                                                                    <value type="javascript">"Neutral"</value>
+                                                                                </simple-property-list>
+                                                                            </structure>
+                                                                            <structure>
+                                                                                <property name="operator">eq</property>
+                                                                                <property name="backgroundColor">#A9CF55</property>
+                                                                                <property name="fontWeight">bold</property>
+                                                                                <property name="color">#3D4C53</property>
+                                                                                <expression name="testExpr" type="javascript">row["tone"]</expression>
+                                                                                <simple-property-list name="value1">
+                                                                                    <value type="javascript">"Positive"</value>
+                                                                                </simple-property-list>
+                                                                            </structure>
+                                                                        </list-property>
+                                                                        <text-data id="579">
+                                                                            <expression name="valueExpr">row["tone"]</expression>
+                                                                            <property name="contentType">html</property>
+                                                                        </text-data>
+                                                                    </cell>
+                                                                </row>
+                                                            </grid>
+                                                        </cell>
+                                                    </row>
+                                                </grid>
+                                                <text name="BIRT Online Maps - 2 b - Add Location" id="323" extends="BIRT Online Maps.BIRT Online Maps - 2 b - Add Location">
+                                                    <property name="contentType">html</property>
+                                                    <text-property name="content"><![CDATA[<script>
+var tone = "<VALUE-OF>row["tone"]</VALUE-OF>";
+var pinColor = "rgb(112,183,185)";
+if (tone == "Negative") {
+	pinColor = "rgb(241,64,64)";
+} else if (tone == "Positive") {
+	pinColor = "rgb(169,207,85)";
+}
+actuate.birt.maps.addLocation(<value-of>row.__rownum</value-of>, <value-of>row["latitude"]</value-of>, <value-of>row["longitude"]</value-of>, {pinColor: pinColor});
+
+</script>]]></text-property>
+                                                </text>
+                                            </cell>
+                                        </row>
+                                    </detail>
+                                </table>
+                            </cell>
+                        </row>
+                        <row id="324">
+                            <cell id="325">
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <text name="BIRT Online Maps - 3 - Start Google Maps" id="326" extends="BIRT Online Maps.BIRT Online Maps - 3 - Start Google Maps">
+                                    <property name="borderBottomStyle">none</property>
+                                    <property name="borderLeftStyle">none</property>
+                                    <property name="borderRightStyle">none</property>
+                                    <property name="borderTopStyle">none</property>
+                                </text>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">twitter.png</property>
+            <property name="type">image/png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+                YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuOWwzfk4A
+                AAtlSURBVHhe7Z0JkBxVGcfjDSqC932XUlp4FuKBt5aihQnJdM+GkDKUpZR44C2CMRxKUUYQUCtRsIgk
+                hDjdPZtDjSkKygsRJBxaGEw05FBistvvzW6CQcIm6//r+ULt8e1meqZ7+pjvV/Wv2aOn3/G943uvX783
+                Q1EURVEURVEURVEURVEURVEURZkep7bz6GoQftAJ7CI3sKvcILzL9ewuaG8lCA9CByBT8e0mx7O/wudi
+                px46s+v7nsO3UIoGGd0JzDwYfL3rhf/D52hseeGhSmBvx32+3LXCMDr6GP5JaYfTV+59Fgx2CQw4NMmg
+                HQgtxMMV3yx3auFrOahEcWpDz3B9c0XFHzqR/6TEwfVGn4gmfiGa9f9KBkxK1GW4gbl27trdz+WgO2Lm
+                msFjonhTgfXMFv5z61DC+ceeBTXzHei3N080Vqrywgb8hY9zFGJDBQg1/tsoUPbwPVEQvsD/bh3Xt+ej
+                ybuYf+0t0F8iE8+FMR4ZZ5yuKrz+1HUPPJljND2IbzWw76744UrqUsbeB78PzF/+n6fwla2B5u5YfDnq
+                6zopjUXkrJ+MPoEycmwmZiXHM3e63p7ncdQmUfEbbyK/BEa+X/o+iRxNvrx18KWvH74Blahq0Hgf/6vU
+                RB6+ZzeMzcDM5YVbUSFfQvGbXR94PgrFXDTpV6Nr2ileP1aevY8KdJS4lkFzMqlEYVwLL/UkvqKUwOd5
+                nOOF68alOy/y7C60StvE/00h2PBgNTAnc/Jah/qSKW5oUepez5eVDqpVUrqLKjiw3+GkxYPGjNINI3lm
+                T1rj1Sxxg8aZYnoLKlTUG6lF4+TFA1/eJN30sNASDFbrjTfz5YXHqQ0ejyY21TF+N4Vu7B6k51hOXjxo
+                tku6qaChtvqXHIKm8mYhfUXVvUeaWp67ZvAFTt3O5F/Hg2HFB4SbykKtQWsxi79aSMijFtNWQGH08qfT
+                +oefyUkbxynrDz3JqTdmo7CvZYde7sZd335WuvlUIk+zrXFmDrjggtHHogB3d5YvNZnrFizbdhQnLWLW
+                6sZx8OeqNKFUCezwmGvP4ksmg6HGpeNv3JrgQS+NP97MFhTcPiktRVJkWN8uoKG7U2u8nB41o1BfDiPf
+                gco5MvF6JwhXcPJlcNE1E7/UqhCZW9G0vJBvlXvQZN4ipaNYCn+LdPyZmnX5/2NlNtJEFydfhpoL+cut
+                CaVugBZI8O1yy5xg6BVS/MsqVM5/t1Q5Oy0AJPIL0AwtzvPTRHRZ35TiXkp5YaNaNydw0qcHX2i7C5is
+                8C8oCLmcOaSmU45zuYSa/yA90uZkH5l2ncCphNaAVrtcRMMQDiJzqB9ErWhvKVeBBOPvo2l9TnZrxB0G
+                tizPbMmLb1CtD75FjGOZRItKaubtnOTWiTUR1J68vv6hV3JwmYBCPl+IV2nUdPjM6zi58aCZJOmmSYq6
+                BYzBr5pq1iptqEuS4lUG0QKSjofiGFPeJ908aaGkDpPP4dT2PpuD7gqub34gxaf4Cq8/4ji/FVBDrpQD
+                SEn0JM43V/StNi/mKKQK0rdMjEdBhRb1AFrUszl5nTPVgpC0hYSMwDj95IdwVFIBYa2aGHah5YXbOWkJ
+                QUvCYi4/SlzohpzAnofPaC1cktCDEzHMgqri292ctOQYuyg0U3nhIccLf0dPsGhBJEevI8rmA6DlNJy0
+                5IgeJSb8ClTHQmGgp1xoGRbB0z3pPb8ZfTxHNxYoAOeK9y+oUAAsJy1ZMF7+lhRgXkQzXWj+bkSBWEiT
+                TLSaiaM+LfTIVLpfUZVKF0DQkAKla4cUaF5FkyAYDv0Chfcyx7OfcermlDnB8KvGvhlDv0vfLarIRpy0
+                5IFX/hEp0CIKhWM/nMp/IcPulv5fWLXz4mccMCJYIgasyoVoQQibKh2iBYW06kQIXJW9YJsNbKr0oFeO
+                M58bUImCXVaymTqnWrdv4B8nQcuomk6WHBFVRoLDyybqHAwpNsPxu7kamA/TjCD/+VH6VjdeRteIEVFl
+                I9+ew+bpHAyh7nr0xl641QnMxfQO+tjCQHvO0Ph7XCRUmakaNE5j03QO1X4pEAydBvC/ta5vLkShmEf7
+                BTiBvUG6VtVdtb34QwI3THBRqCptoWKOJLreMjcPgVQtqRKYf7DpkoGadikgVV5l1rDpkoHmzOH8Zbgz
+                liqO6EEYmy45pnIEVflTxQ8/xGZLDnqKJgWmyplosQyG5Gy25KDl2pXAPiQGqsqNMAL4K5sseTAa+JkU
+                qCo/go2uYnMlD20hghJ2UApYlQ/Rli9srnSAM7hcCliVvVA5D7jt7gTWKrPr4YsQSAs7T6i6LRqpsZnS
+                BePMz0kRUGUrNP9fZBOlTPMlkV9KkVBlJ9oQii2UPtHj32m2I1d1XbexabpHX//Aq1EIBoXIqLosdMvx
+                T/9IAtof2PXCUIqUqjtCJRxJ6hW5tmjOD+i6wKxEi3LYFNlBR5igJP5BiqAqXVUD81E2Q7Y0z9UxF0UT
+                EkJEVckLeb2D9jdmE+QD12u8sfn6thxpVYLyzVc52/NHxbenwje4VYy4qmMhb4fPWBE+jbM7v1T88K0Y
+                pixFczUgJUTVnlDBLucsLga0eYPr2XeiMNRQGPSpYgeitRl0ygdnbfagL/o0IrYetX0JvSdAfZPrh1+C
+                sc9zfftd2q4Mkb4denBiYlTxBWf7Ss76fFC2DRbyLFSi/dOdHJoZbmBukiKsSlZoZS/lLM8XtPWKFGFV
+                gvLMnlx7/jobmLLga3FW5xPaqk09/HSEfL277ZM/uwlKaUk3Xs5OVKnoTAPO4nxDr5JVjnDUrCqeMOz7
+                IWdvMejrD1+D4co+KTGqeILXv23mmsFjOGuLA40K0HTpk8EOFDX9cc/4yRPRObz6ZnH7SnKzp6ygt1VQ
+                CEp/IlfyMhvzdLJaR9ATQdezu+SEqiYpOuGri8u8uwGdYR9t2iwlWDVOGEUV+gj+aUG/Nl9bg2nkmws5
+                q8oLDWucwC6El2vETOhRoeb/XNqMs7RE+w/55lO0VkDKkB7TbQuWbTuKs6b3oCPinMCcjZbhBrQM99N2
+                J0ImlVKoAH/L6tDM3EK1gV46aR5ZV17nkWb6kM7OTvYsK7ThATKpXGf6jRH6/J1Zn5ucW5x64/2UQVLG
+                lUJeuL10Y/0koFfP3cBcK2ZaSYRm/59o3RI/ALPQ0GIHcgLhAJb8lXOzkU5b4WQrRPS8ILD3Ts6scgld
+                2q9db89TOdm9Db3U6PjGHXcgRYmF1u1H7Z5sWipovIvM+Fo01hcyqmzCGP8hN2icycnvTaIxfd3ORBPo
+                w/APSxlVRlEhr/hDJ3I29BY0ueH64SeQEV4vLg9zgnBFId7eTQI6pJle/KTTquDlXocx7lYpU3pBqPUW
+                Xdw8zppiUfEb70Uz/VMnsN+HFjVf8rTnoPn+PBL1lcMve+LzascL15EDhwTrEz0W8qVW+CGeUxs8HoVA
+                j4CLIy/cXg3sxzgLywEKAe3w8XcxwaqmPLuXWsXSPsalcavjmU+iMJR3Tr4N8Ujmx7l8TTsNaHUqvZhI
+                jy4nZkYviQyPGr+0Z+fxoxYBHi48/TukDCqrIkcXzi8tWuGsUKqBObnim+XNmS4544oudH93Uhfo1HYe
+                zclWJjJv5dDTqXtwPHtLGZZxwd95AFpcrZsTOIlKq8wJ7Evp4AI3CH+PZnNEyuA8CgbfjL79e/h8V+52
+                3iwq1DI0n/bZa1zPbJmY6VkKht5NkzZ0HiLNe3CUlTShGTI61x5O5CXI+A3U1ErGSVzRdvbmJjhxlyHc
+                M9TgOWLW6sZx1Xr4NvgQp8NA52OYuQSOZT8M90cUkE1wMGkb+iF87ochH0G3cpB/blAtxu87HC+8JzJw
+                YFfRRgr4/AbuV6WncKmcoqkoiqIoiqIoiqIoiqIoiqIoilJIZsz4P0/ecf008NEGAAAAAElFTkSuQmCC
+</property>
+        </structure>
+        <structure>
+            <property name="name">TwitterArrow.png</property>
+            <property name="type">image/png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+                YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuOWwzfk4A
+                AAEmSURBVEhL3ZRtS8MwFIX3/3+KThCHL50OXatzs74xBWUiVFHRT2JNu7l2Oybi2jUcW5G7LxYeaJ+b
+                e0LaNLX/cwFYOFRKQ6U0VFYxmU6RpKm+5XUbKsuIhiOst4+w7LjwLwcwE9pjbKgs401FWNvtYmnL/aLZ
+                OcV7FOsSH2+gsgx7EsNqq4O7pxdd5j1UlsEmMZS9vsKDjWm4uAlo6E84Byd4DZVuz3MKofOoeIRNz6dB
+                VRzrFc1nFYJnpOkEO4dnNKCKX68keHxGvelljWbC8HsHiX2TXv86a27s9RCqfIuK7a62388CWt1zrfKa
+                2H8yCB6wsr2PuuPh6vZeq7ym4iE2XKE//mOcwGB7gzm3xskCz66/QKU0VEpDpTRUSkOlNFTKgton8Drl
+                ou3yip4AAAAASUVORK5CYII=
+</property>
+        </structure>
+        <structure>
+            <property name="name">TwitterRT.png</property>
+            <property name="type">image/png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAABkAAAAUCAIAAAD3FQHqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+                YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTJDBGvs
+                AAAA0ElEQVQ4T+WTsQqDMBCG+/6PUoQidHAQC5WSQVx0cIkVuig4CYqDgfSanjWJxjZtp/bjFpPfL0c8
+                N/x7/KOrzWPHC/28wWc+lAnZesd5udGlxwyiuFiduhglpB7E2vkgva9WnInEA8nFKhJI0SAtGawa+1px
+                NRkJtbRDaIu7MtTHgMHVF3BNk2UsuLjuHpB421XYu0aMOQDO2+GuXNN5dq713i1cT7+PyaXXPqluE7I8
+                N8irLuiUisTSPCOaq6PRSVVgYV+C2X+GaK6P+H0X51fLVWGTNGO1qQAAAABJRU5ErkJggg==
+</property>
+        </structure>
+        <structure>
+            <property name="name">TwitterHeart.png</property>
+            <property name="type">image/png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAABkAAAAUCAIAAAD3FQHqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+                YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTJDBGvs
+                AAAA/ElEQVQ4T9WTTQsBURSG/f+foihRFI3IZ9RIEbFhQWRkbBhz5443zhVnzgwLC57eNHPueZ/NXKnw
+                e/yXy1d6tlj1x1P8+oFKGD4juM7qUqz30qX6PXg+nTwkOqSCQXC1B5NH555Ky0bYEGtUMHCX1jpbbrKa
+                mEy5gWWq3eCuQGvWSYhSiS5QqHVZR0y+2qGCQXB1h1NWE4M1KhgEl+MeWU0M1qhgEFygaY9ZkwULtPqE
+                7MLdyVlt1n8ER9HLBWQX2DouvjqzIBhunAMtvRLrAuvdgenwiiEdR0hyge3ezVt0RfCAVzqQeOMC+BuP
+                5kvE83waxfDe9Tm/6QrDK5VaZCuF24pHAAAAAElFTkSuQmCC
+</property>
+        </structure>
+    </list-property>
+</report>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.actuate.istudio.analysis.model:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.actuate.istudio.analysis.model="http:///com.actuate.istudio.analysis.model.ecore" name="OTCAExamples">
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Social Insight.dashboard" path="/OTCAExamples/Dashboards/Social Insight.dashboard"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptLibrary" name="MINDEF.rptlibrary" path="/OTCAExamples/Report Libraries/MINDEF.rptlibrary" reports="//@files.8 //@files.9 //@files.10"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="CSInsightsCapacityForecast.rptdesign" path="/OTCAExamples/Report Designs/CSInsightsCapacityForecast.rptdesign">
+    <dataSets name="FlatFileForecastExport">
+      <columns name="Day"/>
+      <columns name="Measure"/>
+      <columns name="type"/>
+      <columns name="sort"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Data" name="MINDEF_04.1.data" path="/OTCAExamples/Data Objects/MINDEF_04.1.data">
+    <targetReportsMap key="//@files.8" value="1"/>
+    <targetReportsMap key="//@files.9" value="1"/>
+    <targetReportsMap key="//@files.10" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:DataDesign" name="MINDEF_04.1.datadesign" path="/OTCAExamples/Data Objects/MINDEF_04.1.datadesign">
+    <dataSets name="Assets">
+      <columns name="id"/>
+      <columns name="site"/>
+      <columns name="title"/>
+      <columns name="author"/>
+      <columns name="publish_date"/>
+      <columns name="process_date"/>
+      <columns name="url"/>
+      <columns name="summary"/>
+      <columns name="body"/>
+      <columns name="subjectivity"/>
+      <columns name="tone"/>
+    </dataSets>
+    <dataSets name="Categories">
+      <columns name="count"/>
+      <columns name="term"/>
+      <columns name="cat_id"/>
+      <columns name="category"/>
+    </dataSets>
+    <dataSets name="Concepts_Complex">
+      <columns name="asset_id"/>
+      <columns name="keyword"/>
+      <columns name="category"/>
+      <columns name="FromTable"/>
+    </dataSets>
+    <dataSets name="Concepts_Simple">
+      <columns name="asset_id"/>
+      <columns name="keyword"/>
+      <columns name="category"/>
+      <columns name="FromTable"/>
+    </dataSets>
+    <dataSets name="Geo">
+      <columns name="asset_id"/>
+      <columns name="keyword"/>
+      <columns name="category"/>
+      <columns name="FromTable"/>
+    </dataSets>
+    <dataSets name="Org">
+      <columns name="asset_id"/>
+      <columns name="keyword"/>
+      <columns name="category"/>
+      <columns name="FromTable"/>
+    </dataSets>
+    <dataSets name="Ppl">
+      <columns name="asset_id"/>
+      <columns name="keyword"/>
+      <columns name="category"/>
+      <columns name="FromTable"/>
+    </dataSets>
+    <dataSets name="Topics">
+      <columns name="asset_id"/>
+      <columns name="keyword"/>
+      <columns name="category"/>
+      <columns name="FromTable"/>
+    </dataSets>
+    <dataSets name="TwitterLocation">
+      <columns name="asset_id"/>
+      <columns name="latitude"/>
+      <columns name="longitude"/>
+    </dataSets>
+    <dataSets name="MasterCategories">
+      <columns name="asset_id"/>
+      <columns name="FromTable"/>
+      <columns name="category"/>
+      <columns name="keyword"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Dashboard" name="Social Insight_Administrator.dashboard" path="/OTCAExamples/draft/Social Insight_Administrator.dashboard"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="TwitterODA.rptdesign" path="/OTCAExamples/Report Designs/TwitterODA.rptdesign">
+    <dataSets name="Twitter search">
+      <columns name="published"/>
+      <columns name="linkURI"/>
+      <columns name="text"/>
+      <columns name="htmlText"/>
+      <columns name="author"/>
+      <columns name="authorURI"/>
+      <columns name="lang"/>
+      <columns name="tweetDate" expression="row[&quot;published&quot;]"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptLibrary" name="BIRT Online Maps.rptlibrary" path="/OTCAExamples/Report Libraries/BIRT Online Maps.rptlibrary" reports="//@files.11"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="Summary_B.rptdesign" path="/OTCAExamples/Report Designs/Summary_B.rptdesign" libraries="//@files.1">
+    <dataMap key="//@files.3" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="SocialInsight.rptdesign" path="/OTCAExamples/Report Designs/SocialInsight.rptdesign" libraries="//@files.1">
+    <dataMap key="//@files.3" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="Summary_A.rptdesign" path="/OTCAExamples/Report Designs/Summary_A.rptdesign" libraries="//@files.1">
+    <dataMap key="//@files.3" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="TweetMap.rptdesign" path="/OTCAExamples/Report Designs/TweetMap.rptdesign" libraries="//@files.7">
+    <dataSets name="Tweets">
+      <columns name="Count"/>
+      <columns name="ID"/>
+      <columns name="Tweet Time"/>
+      <columns name="DateTime"/>
+      <columns name="Retweets"/>
+      <columns name="Likes"/>
+      <columns name="Text"/>
+      <columns name="User"/>
+      <columns name="Handle"/>
+      <columns name="Location"/>
+      <columns name="latitude"/>
+      <columns name="longitude"/>
+      <columns name="URL"/>
+      <columns name="Subjectivity"/>
+      <columns name="Tone"/>
+    </dataSets>
+  </files>
+</com.actuate.istudio.analysis.model:Project>

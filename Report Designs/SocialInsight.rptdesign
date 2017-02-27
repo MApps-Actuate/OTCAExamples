@@ -1,0 +1,2419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201603260016</property>
+    <property name="units">in</property>
+    <property name="theme">MINDEF.Dashboard</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+        <structure>
+            <property name="fileName">Report Libraries/MINDEF.rptlibrary</property>
+            <property name="namespace">MINDEF</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <data-mart-data-source name="MINDEF" id="28">
+            <property name="datamartURL">Data Objects/MINDEF_04.1</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <data-sets>
+        <data-mart-data-set name="Categories" id="597">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">term</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">term</text-property>
+                    <text-property name="heading">term</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">cat_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cat_id</text-property>
+                    <text-property name="heading">cat_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">category</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">category</text-property>
+                    <text-property name="heading">category</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">count</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">term</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">cat_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">category</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">MINDEF</property>
+            <property name="dataObject">Categories</property>
+            <list-property name="selectedColumns">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">count</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">term</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">cat_id</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">category</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+        </data-mart-data-set>
+    </data-sets>
+    <property name="linkedDataModels">
+        <data-mart-linked-data-model name="MINDEF" id="478">
+            <property name="dataSource">MINDEF</property>
+            <property name="dataObject">MINDEF</property>
+        </data-mart-linked-data-model>
+    </property>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="orientation">auto</property>
+            <property name="height">900px</property>
+            <property name="width">1200px</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="644">
+            <column id="645"/>
+            <row id="646">
+                <cell id="647">
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">5pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">5pt</property>
+                    <grid id="265">
+                        <column id="266">
+                            <property name="width">400px</property>
+                        </column>
+                        <column id="467">
+                            <property name="width">400px</property>
+                        </column>
+                        <column id="653">
+                            <property name="width">200px</property>
+                        </column>
+                        <column id="657">
+                            <property name="width">200px</property>
+                        </column>
+                        <row id="267">
+                            <expression name="bookmark" type="javascript">"SentimentHistory"</expression>
+                            <property name="backgroundColor">#004080</property>
+                            <property name="color">#FFFFFF</property>
+                            <property name="verticalAlign">top</property>
+                            <cell id="268">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="paddingTop">5pt</property>
+                                <property name="paddingLeft">5pt</property>
+                                <property name="paddingBottom">5pt</property>
+                                <property name="paddingRight">5pt</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">top</property>
+                                <grid id="479">
+                                    <column id="480">
+                                        <property name="width">500px</property>
+                                    </column>
+                                    <column id="481">
+                                        <property name="width">250px</property>
+                                    </column>
+                                    <row id="585">
+                                        <cell id="586">
+                                            <property name="verticalAlign">middle</property>
+                                            <label id="358">
+                                                <property name="fontFamily">"Lato"</property>
+                                                <property name="fontSize">12pt</property>
+                                                <property name="fontWeight">normal</property>
+                                                <property name="textAlign">center</property>
+                                                <text-property name="text">Asset Overview</text-property>
+                                            </label>
+                                        </cell>
+                                        <cell id="587">
+                                            <property name="verticalAlign">middle</property>
+                                            <label id="393">
+                                                <property name="fontFamily">"Lato"</property>
+                                                <property name="fontSize">12pt</property>
+                                                <property name="fontWeight">normal</property>
+                                                <property name="textAlign">center</property>
+                                                <text-property name="text">Tone Distribution</text-property>
+                                            </label>
+                                        </cell>
+                                    </row>
+                                    <row id="484">
+                                        <cell id="485">
+                                            <property name="paddingLeft">1px</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <extended-item extensionName="Chart" id="150">
+                                                <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="Stacked">
+  <block>
+   <children _type="TitleBlock" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" anchor="6" visible="false" orientation="1" position="3">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,278.25,130.0"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+   <background _body=",0,255,255,255"/>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <extendedProperties name="jschart.zoom" value="xy"/>
+  <extendedProperties name="jschart.navigator" value="true"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="01/05/2000,02/01/2000,04/12/2000,03/12/2000,02/29/2000"/>
+   <orthogonalSampleData dataSetRepresentation="5,4,12" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes type="3">
+   <title>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes primaryAxis="true" percent="false">
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition="row[&quot;tone&quot;]">
+      <grouping/>
+     </query>
+     <seriesPalette>
+      <entries _body=",255,241,68,64"/>
+      <entries _body=",255,112,183,185"/>
+      <entries _body=",255,169,207,85"/>
+      <entries _body=",255,61,76,83"/>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+     </seriesPalette>
+     <series _type="BarSeries" seriesIdentifier="Series 1" labelPosition="4" stacked="true" riser="0">
+      <label visible="false">
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;id&quot;]">
+       <grouping enabled="true" aggregateExpression="DistinctCount"/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <label>
+     <caption>
+      <font size="12.0"/>
+      <color _body=",255,255,255,255"/>
+     </caption>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions sorting="0">
+    <query definition=""/>
+    <seriesPalette>
+     <entries _body=",255,80,166,218"/>
+     <entries _body=",255,242,88,106"/>
+     <entries _body=",255,232,172,57"/>
+     <entries _body=",255,128,255,128"/>
+     <entries _body=",255,64,128,128"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,170,85,85"/>
+     <entries _body=",255,128,128,0"/>
+     <entries _body=",255,192,192,192"/>
+     <entries _body=",255,255,255,128"/>
+     <entries _body=",255,128,192,128"/>
+     <entries _body=",255,7,146,94"/>
+     <entries _body=",255,0,128,255"/>
+     <entries _body=",255,255,128,192"/>
+     <entries _body=",255,0,255,255"/>
+     <entries _body=",255,255,128,128"/>
+     <entries _body=",255,0,128,192"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,255,0,255"/>
+     <entries _body=",255,128,64,64"/>
+     <entries _body=",255,255,128,64"/>
+     <entries _body=",255,80,240,120"/>
+     <entries _body=",255,0,64,128"/>
+     <entries _body=",255,128,0,64"/>
+     <entries _body=",255,255,0,128"/>
+     <entries _body=",255,128,128,64"/>
+     <entries _body=",255,128,128,128"/>
+     <entries _body=",255,255,128,255"/>
+     <entries _body=",255,0,64,0"/>
+     <entries _body=",255,0,0,0"/>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,255,128,0"/>
+    </seriesPalette>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;publish_date&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true" groupType="1"/>
+    <sortKey definition="row[&quot;publish_date&quot;]"/>
+   </seriesDefinitions>
+   <lineAttributes>
+    <color _nil="1"/>
+   </lineAttributes>
+   <label visible="false">
+    <caption>
+     <font size="8.0" rotation="90.0"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <formatSpecifier _type="JavaDateFormatSpecifier" pattern="yyyy-MM-dd"/>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+                                                <property name="outputFormat">JS</property>
+                                                <list-property name="filter">
+                                                    <structure>
+                                                        <property name="operator">ge</property>
+                                                        <expression name="expr" type="javascript">row["publish_date"]</expression>
+                                                        <simple-property-list name="value1">
+                                                            <value type="javascript">"2016-01-01 00:00:00.000-0500"</value>
+                                                        </simple-property-list>
+                                                        <property name="updateAggregation">true</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="inheritColumns">false</property>
+                                                <property name="height">300px</property>
+                                                <property name="width">595px</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">id</property>
+                                                        <text-property name="displayName">id</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">publish_date</property>
+                                                        <text-property name="displayName">publish_date</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["publish_date"]</expression>
+                                                        <property name="dataType">date-time</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">tone</property>
+                                                        <text-property name="displayName">tone</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["tone"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="linkedDataModel">MINDEF</property>
+                                            </extended-item>
+                                        </cell>
+                                        <cell id="486">
+                                            <property name="paddingLeft">25px</property>
+                                            <property name="paddingRight">5px</property>
+                                            <property name="verticalAlign">middle</property>
+                                            <extended-item extensionName="Chart" id="151">
+                                                <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="Side-by-side">
+  <block>
+   <children _type="TitleBlock" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" anchor="4" visible="false" orientation="1" position="1" itemType="1">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,270.0,135.0"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+   <background _body=",0,255,255,255"/>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="&#039;A&#039;,&#039;B&#039;,&#039;C&#039;,&#039;D&#039;,&#039;E&#039;"/>
+   <orthogonalSampleData dataSetRepresentation="6,4,12,8,10" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes>
+   <title>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes primaryAxis="true">
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _body=",255,241,68,64"/>
+      <entries _body=",255,112,183,185"/>
+      <entries _body=",255,169,207,85"/>
+      <entries _body=",255,61,76,83"/>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+     </seriesPalette>
+     <series _type="BarSeries" seriesIdentifier="Series 1" stacked="false" riser="0">
+      <label>
+       <caption>
+        <font size="8.0"/>
+       </caption>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;id&quot;]">
+       <grouping enabled="true" aggregateExpression="Count"/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+      <riserOutline _body=",255,255,255,255"/>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <label visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <seriesPalette>
+     <entries _body=",255,241,68,64"/>
+     <entries _body=",255,112,183,185"/>
+     <entries _body=",255,169,207,85"/>
+     <entries _body=",255,61,76,83"/>
+     <entries _body=",255,64,128,128"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,170,85,85"/>
+     <entries _body=",255,128,128,0"/>
+     <entries _body=",255,192,192,192"/>
+     <entries _body=",255,255,255,128"/>
+     <entries _body=",255,128,192,128"/>
+     <entries _body=",255,7,146,94"/>
+     <entries _body=",255,0,128,255"/>
+     <entries _body=",255,255,128,192"/>
+     <entries _body=",255,0,255,255"/>
+     <entries _body=",255,255,128,128"/>
+     <entries _body=",255,0,128,192"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,255,0,255"/>
+     <entries _body=",255,128,64,64"/>
+     <entries _body=",255,255,128,64"/>
+     <entries _body=",255,80,240,120"/>
+     <entries _body=",255,0,64,128"/>
+     <entries _body=",255,128,0,64"/>
+     <entries _body=",255,255,0,128"/>
+     <entries _body=",255,128,128,64"/>
+     <entries _body=",255,128,128,128"/>
+     <entries _body=",255,255,128,255"/>
+     <entries _body=",255,0,64,0"/>
+     <entries _body=",255,0,0,0"/>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,255,128,0"/>
+    </seriesPalette>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;tone&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true"/>
+   </seriesDefinitions>
+   <lineAttributes visible="false">
+    <color _nil="1"/>
+   </lineAttributes>
+   <label>
+    <caption>
+     <font size="12.0"/>
+     <color _body=",255,255,255,255"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+                                                <property name="outputFormat">JS</property>
+                                                <property name="inheritColumns">false</property>
+                                                <property name="height">300px</property>
+                                                <property name="width">244px</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">id</property>
+                                                        <text-property name="displayName">id</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">tone</property>
+                                                        <text-property name="displayName">tone</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["tone"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="linkedDataModel">MINDEF</property>
+                                            </extended-item>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                            <cell id="650">
+                                <property name="colSpan">2</property>
+                                <property name="rowSpan">1</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="paddingTop">5pt</property>
+                                <property name="paddingLeft">0px</property>
+                                <property name="paddingBottom">5pt</property>
+                                <property name="paddingRight">0px</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">top</property>
+                                <grid id="785">
+                                    <column id="789">
+                                        <property name="width">385px</property>
+                                    </column>
+                                    <row id="790">
+                                        <cell id="797">
+                                            <property name="verticalAlign">middle</property>
+                                            <label id="798">
+                                                <property name="fontFamily">"Lato"</property>
+                                                <property name="fontSize">12pt</property>
+                                                <property name="fontWeight">normal</property>
+                                                <property name="textAlign">center</property>
+                                                <text-property name="text">Sources</text-property>
+                                            </label>
+                                        </cell>
+                                    </row>
+                                    <row id="799">
+                                        <cell id="873">
+                                            <property name="verticalAlign">middle</property>
+                                            <grid id="874">
+                                                <property name="width">5.760416666666667in</property>
+                                                <column id="875">
+                                                    <property name="width">5.760416666666667in</property>
+                                                </column>
+                                                <row id="876">
+                                                    <cell id="877">
+                                                        <property name="paddingTop">0px</property>
+                                                        <property name="paddingLeft">0px</property>
+                                                        <property name="paddingBottom">0px</property>
+                                                        <property name="paddingRight">0px</property>
+                                                        <extended-item extensionName="Chart" id="878">
+                                                            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="Side-by-side" orientation="0">
+  <block>
+   <children _type="TitleBlock" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,225.0,130.0"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+   <background _body=",0,255,255,255"/>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="A, B, C"/>
+   <orthogonalSampleData dataSetRepresentation="5,4,12" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes>
+   <title>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes primaryAxis="true">
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,51,51,153"/>
+      <entries _body=",255,232,172,57"/>
+      <entries _body=",255,128,255,128"/>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+     </seriesPalette>
+     <series _type="BarSeries" seriesIdentifier="Unique Assets" stacked="false" riser="0">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;SiteCount&quot;]">
+       <grouping enabled="true"/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <label visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <seriesPalette>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,51,51,153"/>
+     <entries _body=",255,232,172,57"/>
+     <entries _body=",255,128,255,128"/>
+     <entries _body=",255,64,128,128"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,170,85,85"/>
+     <entries _body=",255,128,128,0"/>
+     <entries _body=",255,192,192,192"/>
+     <entries _body=",255,255,255,128"/>
+     <entries _body=",255,128,192,128"/>
+     <entries _body=",255,7,146,94"/>
+     <entries _body=",255,0,128,255"/>
+     <entries _body=",255,255,128,192"/>
+     <entries _body=",255,0,255,255"/>
+     <entries _body=",255,255,128,128"/>
+     <entries _body=",255,0,128,192"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,255,0,255"/>
+     <entries _body=",255,128,64,64"/>
+     <entries _body=",255,255,128,64"/>
+     <entries _body=",255,80,240,120"/>
+     <entries _body=",255,0,64,128"/>
+     <entries _body=",255,128,0,64"/>
+     <entries _body=",255,255,0,128"/>
+     <entries _body=",255,128,128,64"/>
+     <entries _body=",255,128,128,128"/>
+     <entries _body=",255,255,128,255"/>
+     <entries _body=",255,0,64,0"/>
+     <entries _body=",255,0,0,0"/>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,255,128,0"/>
+    </seriesPalette>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="if (row[&quot;site&quot;] === &quot;The Straits Times&quot;) {&#13;&#10;&quot;The Times&quot;;&#13;&#10;} else if (row[&quot;site&quot;] === &quot;Singapore Government&quot;) {&#13;&#10;&quot;Gov Press Release&quot;;&#13;&#10;} else if (row[&quot;site&quot;] === &quot;Overseas Singaporean Unit&quot;) {&#13;&#10;&quot;Google Plus&quot;&#13;&#10;} else if (row[&quot;site&quot;] === &quot;Kementah Blogspot&quot;) {&#13;&#10;&quot;Blogs&quot;&#13;&#10;} else if (row[&quot;site&quot;] === &quot;Doing-National-Service&quot;) {&#13;&#10;&quot;Others&quot;&#13;&#10;} else if (row[&quot;site&quot;] === &quot;Channel NewsAsia&quot;) {&#13;&#10;&quot;News &amp; Observer&quot;&#13;&#10;} else if (row[&quot;site&quot;] === &quot;Today Online&quot;) {&#13;&#10;&quot;Facebook&quot;&#13;&#10;} else {&#13;&#10;row[&quot;site&quot;];&#13;&#10;}"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true"/>
+    <sortKey/>
+   </seriesDefinitions>
+   <lineAttributes visible="false">
+    <color _nil="1"/>
+   </lineAttributes>
+   <label visible="true">
+    <caption>
+     <font size="10.0"/>
+     <color _body=",255,255,255,255"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+                                                            <property name="outputFormat">JS</property>
+                                                            <property name="inheritColumns">false</property>
+                                                            <property name="height">300px</property>
+                                                            <property name="width">459px</property>
+                                                            <property name="dataBindingRef">SiteTable</property>
+                                                        </extended-item>
+                                                    </cell>
+                                                </row>
+                                                <row id="879">
+                                                    <list-property name="visibility">
+                                                        <structure>
+                                                            <property name="format">all</property>
+                                                            <expression name="valueExpr" type="javascript">true</expression>
+                                                        </structure>
+                                                    </list-property>
+                                                    <cell id="880">
+                                                        <property name="paddingTop">0px</property>
+                                                        <property name="paddingLeft">0px</property>
+                                                        <property name="paddingBottom">0px</property>
+                                                        <property name="paddingRight">0px</property>
+                                                        <table name="SiteTable" id="881">
+                                                            <list-property name="userProperties">
+                                                                <structure>
+                                                                    <property name="name">__ac_group_collapse_level</property>
+                                                                    <property name="type">string</property>
+                                                                </structure>
+                                                            </list-property>
+                                                            <property name="color">#FFFFFF</property>
+                                                            <list-property name="boundDataColumns">
+                                                                <structure>
+                                                                    <property name="name">id</property>
+                                                                    <text-property name="displayName">id</text-property>
+                                                                    <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                                                    <property name="dataType">string</property>
+                                                                </structure>
+                                                                <structure>
+                                                                    <property name="name">site</property>
+                                                                    <text-property name="displayName">site</text-property>
+                                                                    <expression name="expression" type="javascript">dataSetRow["site"]</expression>
+                                                                    <property name="dataType">string</property>
+                                                                </structure>
+                                                                <structure>
+                                                                    <property name="name">SiteCount</property>
+                                                                    <text-property name="displayName">SiteCount</text-property>
+                                                                    <property name="dataType">integer</property>
+                                                                    <simple-property-list name="aggregateOn">
+                                                                        <value>siteGroup</value>
+                                                                    </simple-property-list>
+                                                                    <property name="aggregateFunction">COUNTDISTINCT</property>
+                                                                    <list-property name="arguments">
+                                                                        <structure>
+                                                                            <property name="name">Expression</property>
+                                                                            <expression name="value" type="javascript">row["id"]</expression>
+                                                                        </structure>
+                                                                    </list-property>
+                                                                    <property name="allowExport">true</property>
+                                                                </structure>
+                                                            </list-property>
+                                                            <property name="linkedDataModel">MINDEF</property>
+                                                            <column id="904"/>
+                                                            <column id="905"/>
+                                                            <header>
+                                                                <row id="882">
+                                                                    <cell id="883">
+                                                                        <label id="884">
+                                                                            <text-property name="text">site</text-property>
+                                                                        </label>
+                                                                    </cell>
+                                                                    <cell id="885">
+                                                                        <label id="886">
+                                                                            <text-property name="text">id</text-property>
+                                                                        </label>
+                                                                    </cell>
+                                                                </row>
+                                                            </header>
+                                                            <group id="887">
+                                                                <property name="groupName">siteGroup</property>
+                                                                <expression name="keyExpr" type="javascript">row["site"]</expression>
+                                                                <structure name="toc">
+                                                                    <expression name="expressionValue" type="javascript">row["site"]</expression>
+                                                                </structure>
+                                                                <property name="hideDetail">false</property>
+                                                                <list-property name="sort">
+                                                                    <structure>
+                                                                        <expression name="key" type="javascript">row["SiteCount"]</expression>
+                                                                        <property name="direction">asc</property>
+                                                                        <property name="strength">-1</property>
+                                                                    </structure>
+                                                                </list-property>
+                                                                <header>
+                                                                    <row id="888">
+                                                                        <cell id="889">
+                                                                            <data id="890">
+                                                                                <property name="resultSetColumn">site</property>
+                                                                            </data>
+                                                                        </cell>
+                                                                        <cell id="891">
+                                                                            <data id="892">
+                                                                                <property name="resultSetColumn">SiteCount</property>
+                                                                            </data>
+                                                                        </cell>
+                                                                    </row>
+                                                                </header>
+                                                                <footer>
+                                                                    <row id="893">
+                                                                        <cell id="894"/>
+                                                                        <cell id="895"/>
+                                                                    </row>
+                                                                </footer>
+                                                            </group>
+                                                            <detail>
+                                                                <row id="896">
+                                                                    <list-property name="visibility">
+                                                                        <structure>
+                                                                            <property name="format">all</property>
+                                                                            <expression name="valueExpr" type="javascript">true</expression>
+                                                                        </structure>
+                                                                    </list-property>
+                                                                    <cell id="897">
+                                                                        <data id="898">
+                                                                            <property name="resultSetColumn">site</property>
+                                                                        </data>
+                                                                    </cell>
+                                                                    <cell id="899">
+                                                                        <data id="900">
+                                                                            <property name="resultSetColumn">id</property>
+                                                                        </data>
+                                                                    </cell>
+                                                                </row>
+                                                            </detail>
+                                                            <footer>
+                                                                <row id="901">
+                                                                    <cell id="902"/>
+                                                                    <cell id="903"/>
+                                                                </row>
+                                                            </footer>
+                                                        </table>
+                                                    </cell>
+                                                </row>
+                                            </grid>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                        <row id="474">
+                            <expression name="bookmark" type="javascript">"TopicWordCloud"</expression>
+                            <property name="backgroundColor">#004080</property>
+                            <cell id="475">
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="paddingTop">0pt</property>
+                                <property name="paddingLeft">5pt</property>
+                                <property name="paddingBottom">0px</property>
+                                <property name="paddingRight">5pt</property>
+                                <grid id="590">
+                                    <column id="591">
+                                        <property name="width">400px</property>
+                                    </column>
+                                    <row id="592">
+                                        <cell id="593">
+                                            <property name="paddingTop">10px</property>
+                                            <label id="365">
+                                                <property name="fontFamily">"Lato"</property>
+                                                <property name="fontSize">12pt</property>
+                                                <property name="fontWeight">normal</property>
+                                                <property name="color">#FFFFFF</property>
+                                                <property name="textAlign">center</property>
+                                                <text-property name="text">Topic Categories</text-property>
+                                            </label>
+                                        </cell>
+                                    </row>
+                                    <row id="594">
+                                        <cell id="595">
+                                            <property name="paddingBottom">1px</property>
+                                            <extended-item extensionName="Chart" id="297">
+                                                <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="Side-by-side" orientation="0">
+  <block>
+   <children _type="TitleBlock" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,257.25,130.0"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+   <background _body=",0,255,255,255"/>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="A, B, C"/>
+   <orthogonalSampleData dataSetRepresentation="5,4,12" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes>
+   <title>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes primaryAxis="true">
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,112,183,185"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,128,255,128"/>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+     </seriesPalette>
+     <series _type="BarSeries" seriesIdentifier="Unique Assets" stacked="false" riser="0">
+      <label visible="false">
+       <caption>
+        <font name="Lato" size="12.0" bold="true"/>
+        <color _body=",255,61,76,83"/>
+       </caption>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;id&quot;]">
+       <grouping enabled="true" aggregateExpression="DistinctCount"/>
+      </dataDefinition>
+      <dataPoint>
+       <components type="1"/>
+      </dataPoint>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <label visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes visible="false">
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes visible="false">
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions sorting="0" sortStrength="-1">
+    <query definition=""/>
+    <seriesPalette>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,112,183,185"/>
+     <entries _body=",255,192,192,192"/>
+     <entries _body=",255,128,255,128"/>
+     <entries _body=",255,64,128,128"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,170,85,85"/>
+     <entries _body=",255,128,128,0"/>
+     <entries _body=",255,192,192,192"/>
+     <entries _body=",255,255,255,128"/>
+     <entries _body=",255,128,192,128"/>
+     <entries _body=",255,7,146,94"/>
+     <entries _body=",255,0,128,255"/>
+     <entries _body=",255,255,128,192"/>
+     <entries _body=",255,0,255,255"/>
+     <entries _body=",255,255,128,128"/>
+     <entries _body=",255,0,128,192"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,255,0,255"/>
+     <entries _body=",255,128,64,64"/>
+     <entries _body=",255,255,128,64"/>
+     <entries _body=",255,80,240,120"/>
+     <entries _body=",255,0,64,128"/>
+     <entries _body=",255,128,0,64"/>
+     <entries _body=",255,255,0,128"/>
+     <entries _body=",255,128,128,64"/>
+     <entries _body=",255,128,128,128"/>
+     <entries _body=",255,255,128,255"/>
+     <entries _body=",255,0,64,0"/>
+     <entries _body=",255,0,0,0"/>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,255,128,0"/>
+    </seriesPalette>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="if (row[&quot;category7&quot;] === &quot;Permanent Residents&quot; || row[&quot;category7&quot;] === &quot;Women&quot;) {&#13;&#10;&quot;General&quot;;&#13;&#10;} else {&#13;&#10;row[&quot;category7&quot;];&#13;&#10;}"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true"/>
+    <sortKey definition="row[&quot;id&quot;]"/>
+   </seriesDefinitions>
+   <lineAttributes visible="false">
+    <color _nil="1"/>
+   </lineAttributes>
+   <label>
+    <caption>
+     <font size="12.0"/>
+     <color _body=",255,255,255,255"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <formatSpecifier _type="StringFormatSpecifier" pattern="&gt;"/>
+   <majorGrid>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes visible="false">
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <scale tickBetweenCategories="false"/>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+                                                <property name="outputFormat">JS</property>
+                                                <list-property name="filter">
+                                                    <structure>
+                                                        <property name="operator">in</property>
+                                                        <expression name="expr" type="javascript">row["category7"]</expression>
+                                                        <simple-property-list name="value1">
+                                                            <value type="javascript">"Family"</value>
+                                                            <value type="javascript">"Food"</value>
+                                                            <value type="javascript">"Health"</value>
+                                                            <value type="javascript">"Permanent Residents"</value>
+                                                            <value type="javascript">"Safety"</value>
+                                                            <value type="javascript">"Training"</value>
+                                                            <value type="javascript">"Women"</value>
+                                                        </simple-property-list>
+                                                        <property name="updateAggregation">true</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="inheritColumns">false</property>
+                                                <property name="height">331px</property>
+                                                <property name="width">538px</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">id</property>
+                                                        <text-property name="displayName">id</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">category7</property>
+                                                        <text-property name="displayName">category</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["category7"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="linkedDataModel">MINDEF</property>
+                                            </extended-item>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                            <cell id="596">
+                                <property name="colSpan">3</property>
+                                <property name="rowSpan">1</property>
+                                <property name="borderBottomStyle">none</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <property name="paddingTop">0pt</property>
+                                <property name="paddingLeft">10pt</property>
+                                <property name="paddingBottom">10pt</property>
+                                <property name="paddingRight">10pt</property>
+                                <grid id="638">
+                                    <property name="height">1.6354166666666667in</property>
+                                    <property name="width">7in</property>
+                                    <column id="639">
+                                        <property name="width">9in</property>
+                                    </column>
+                                    <row id="1128">
+                                        <cell id="1129">
+                                            <property name="paddingTop">10px</property>
+                                            <label id="1130">
+                                                <property name="fontFamily">"Lato"</property>
+                                                <property name="fontSize">12pt</property>
+                                                <property name="fontWeight">normal</property>
+                                                <property name="color">#FFFFFF</property>
+                                                <property name="textAlign">center</property>
+                                                <text-property name="text">Key Words</text-property>
+                                            </label>
+                                        </cell>
+                                    </row>
+                                    <row id="640">
+                                        <cell id="641">
+                                            <property name="backgroundColor">#C0C0C0</property>
+                                            <property name="borderBottomColor">#FFFFFF</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">5px</property>
+                                            <property name="borderLeftColor">#FFFFFF</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">5px</property>
+                                            <property name="borderRightColor">#FFFFFF</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">5px</property>
+                                            <property name="borderTopColor">#FFFFFF</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">5px</property>
+                                            <extended-item extensionName="HTMLControl" id="353">
+                                                <method name="clientOnCreate"><![CDATA[// This example demonstrates how to create a Word Cloud Chart
+// To render this visualization in Windows Internet Explorer use a version higher than 8
+
+/* ----------------------------------------------------------------------------------------- */
+/* This is the configuration object for creating the chart. You modify it to map your own data.
+ * See inline comments for more details.
+ */
+
+var config = {
+
+	/*
+	 * Provide the column binding names as shown below. If not all
+	 * column names are specified, the template will use the sample data instead.
+	 */
+
+	/* Specify the column name as it appears in the data set.
+	* Example: 
+	* wordColumn : "CUSTOMERNAME"
+	*/
+	/* the column name for the wordColumn in String format */
+	wordColumn : "term",
+	wordSize : "count",
+	min : 100000000,
+	max : 0,
+	
+	/* the total number of word to display */
+	wordCount : null
+};
+
+/* --------------------------------------------------------------------------------------- */
+/*
+ * Below is the implementation code for the example. In most cases you do not need to
+ * modify it, unless you want to change the chart style, or behavior. 
+ * Changing the config object above is sufficient. 
+ */
+ 
+//Test if data mapping is configured, otherwise use sample data
+config.testMode = config.wordColumn == null
+		|| config.wordColumn == "<changeme>";
+
+// If data binding is used, the data should be saved and transformed in order
+// to fit the Word Cloud Chart map.
+function dataTransfrom(cursor) {
+	var rows = [];
+	var count = 0;
+	while (cursor.hasNext()) {
+		if(config.wordCount != null &amp;&amp; count >= config.wordCount){
+			break;
+		}
+		var dataObj = cursor.next();
+		rows.push(dataObj[config.wordColumn]);
+		count++;
+	}
+	return rows;
+}
+
+var sampleData = [ "Hello", "world", "normally", "you", "want", "more",
+		"words", "than", "this" ];
+var colors = ["#3D4C53"];
+var customViz = this;
+var containerId = this.getId();
+var containerWidth = $("#" + containerId).width();
+var containerHeight = $("#" + containerId).height();
+
+var data = config.testMode ? sampleData : dataTransfrom(this.getDataCursor());
+
+var callback = function() {
+	
+	var fill = d3.scale.linear()
+            .domain([1,2,3,4,5,6,10,15,20,50])
+            .range(colors);
+
+	d3.layout.cloud().size([ containerWidth, containerHeight ]).words(
+			data.map(function(d) {
+				return {
+					text : d,
+					size : 10 + Math.random() * 90
+				};
+			})).padding(5).rotate(function() {
+		return ~~(Math.random() * 2) * 90;
+	}).font("Lato").fontSize(function(d) {
+		return d.size;
+	}).on("end", draw).start();
+	customViz.setPrintReady();
+	function draw(words) {
+		d3.select("#" + containerId).append("svg")
+				.attr("width", containerWidth).attr("height", containerHeight).attr("class","wordcloud")
+				.append("g").attr(
+						"transform",
+						"translate(" + containerWidth / 2 + ","
+								+ containerHeight / 2 + ")").selectAll("text")
+				.data(words).enter().append("text").style("font-size",
+						function(d) {
+							return d.size + "px";
+						}).style("font-family", "Lato").style("font-size",function(d){
+							return d.size + "px";
+						}).style("fill",
+						function(d, i) {
+							return fill(i);
+						}).attr("text-anchor", "middle").attr(
+						"transform",
+						function(d) {
+							return "translate(" + [ d.x, d.y ] + ") rotate("
+									+ d.rotate + ")";
+						}).text(function(d) {
+					return d.text;
+				});
+	}
+}
+
+var downloadURL = 'js/d3-cloud-master/d3.layout.cloud.js';
+
+head.load('http://d3js.org/d3.v2.min.js', this.getBirtResourceURL(downloadURL),
+		callback);
+]]></method>
+                                                <list-property name="sort">
+                                                    <structure>
+                                                        <expression name="key" type="javascript">row["count"]</expression>
+                                                        <property name="direction">desc</property>
+                                                        <property name="strength">-1</property>
+                                                    </structure>
+                                                </list-property>
+                                                <list-property name="filter">
+                                                    <structure>
+                                                        <property name="operator">top-n</property>
+                                                        <expression name="expr" type="javascript">row["count"]</expression>
+                                                        <simple-property-list name="value1">
+                                                            <value type="javascript">40</value>
+                                                        </simple-property-list>
+                                                        <property name="updateAggregation">true</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="height">340px</property>
+                                                <property name="width">800px</property>
+                                                <property name="dataBindingRef">WC_Table</property>
+                                            </extended-item>
+                                        </cell>
+                                    </row>
+                                    <row id="642">
+                                        <property name="height">0.9375in</property>
+                                        <list-property name="visibility">
+                                            <structure>
+                                                <property name="format">all</property>
+                                                <expression name="valueExpr" type="javascript">true</expression>
+                                            </structure>
+                                        </list-property>
+                                        <cell id="643">
+                                            <property name="backgroundColor">#C0C0C0</property>
+                                            <property name="borderBottomColor">#FFFFFF</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">5px</property>
+                                            <property name="borderLeftColor">#FFFFFF</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">5px</property>
+                                            <property name="borderRightColor">#FFFFFF</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">5px</property>
+                                            <property name="borderTopColor">#FFFFFF</property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">5px</property>
+                                            <table name="WC_Table" id="598">
+                                                <list-property name="userProperties">
+                                                    <structure>
+                                                        <property name="name">__ac_group_collapse_level</property>
+                                                        <property name="type">string</property>
+                                                    </structure>
+                                                </list-property>
+                                                <property name="dataSet">Categories</property>
+                                                <list-property name="boundDataColumns">
+                                                    <structure>
+                                                        <property name="name">term</property>
+                                                        <text-property name="displayName">term</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["term"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">cat_id</property>
+                                                        <text-property name="displayName">cat_id</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["cat_id"]</expression>
+                                                        <property name="dataType">integer</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">category</property>
+                                                        <text-property name="displayName">category</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["category"]</expression>
+                                                        <property name="dataType">string</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="name">count</property>
+                                                        <text-property name="displayName">count</text-property>
+                                                        <expression name="expression" type="javascript">dataSetRow["count"]</expression>
+                                                        <property name="dataType">decimal</property>
+                                                    </structure>
+                                                </list-property>
+                                                <list-property name="sort">
+                                                    <structure>
+                                                        <expression name="key" type="javascript">row["count"]</expression>
+                                                        <property name="direction">desc</property>
+                                                        <property name="strength">-1</property>
+                                                    </structure>
+                                                </list-property>
+                                                <list-property name="filter">
+                                                    <structure>
+                                                        <property name="operator">not-in</property>
+                                                        <expression name="expr" type="javascript">row["term"]</expression>
+                                                        <simple-property-list name="value1">
+                                                            <value type="javascript">"All-China Women"</value>
+                                                            <value type="javascript">"All-India Progressive Women"</value>
+                                                            <value type="javascript">"Asian women"</value>
+                                                            <value type="javascript">"Chinese women"</value>
+                                                            <value type="javascript">"Family Development Chan Chun Sing"</value>
+                                                            <value type="javascript">"Family Development Minister"</value>
+                                                            <value type="javascript">"Family Development Tan Chuan-Jin"</value>
+                                                            <value type="javascript">"Family Service Centres"</value>
+                                                            <value type="javascript">"Food Centre"</value>
+                                                            <value type="javascript">"Health Affairs"</value>
+                                                            <value type="javascript">"Health Ministry"</value>
+                                                            <value type="javascript">"Indonesian women"</value>
+                                                            <value type="javascript">"International Women"</value>
+                                                            <value type="javascript">"National Service Training"</value>
+                                                            <value type="javascript">"National Training Centre"</value>
+                                                            <value type="javascript">"Palestinian Health Ministry"</value>
+                                                            <value type="javascript">"Police National Serviceman"</value>
+                                                            <value type="javascript">"Ready National Servicemen"</value>
+                                                            <value type="javascript">"Theatre Training"</value>
+                                                            <value type="javascript">"food court"</value>
+                                                            <value type="javascript">"food street"</value>
+                                                            <value type="javascript">"health minister"</value>
+                                                            <value type="javascript">"royal family"</value>
+                                                            <value type="javascript">"singhealth"</value>
+                                                            <value type="javascript">"sufood"</value>
+                                                            <value type="javascript">"supper club"</value>
+                                                            <value type="javascript">"training centre"</value>
+                                                            <value type="javascript">"young women"</value>
+                                                            <value type="javascript">"BMTC"</value>
+                                                            <value type="javascript">"bmt"</value>
+                                                        </simple-property-list>
+                                                        <property name="updateAggregation">true</property>
+                                                    </structure>
+                                                    <structure>
+                                                        <property name="operator">top-n</property>
+                                                        <expression name="expr" type="javascript">row["count"]</expression>
+                                                        <simple-property-list name="value1">
+                                                            <value type="javascript">150</value>
+                                                        </simple-property-list>
+                                                        <property name="updateAggregation">true</property>
+                                                    </structure>
+                                                </list-property>
+                                                <column id="622"/>
+                                                <column id="623"/>
+                                                <column id="624"/>
+                                                <column id="625"/>
+                                                <header>
+                                                    <row id="599">
+                                                        <cell id="600">
+                                                            <label id="648">
+                                                                <text-property name="text">count</text-property>
+                                                            </label>
+                                                        </cell>
+                                                        <cell id="602">
+                                                            <label id="603">
+                                                                <text-property name="text">term</text-property>
+                                                            </label>
+                                                        </cell>
+                                                        <cell id="604">
+                                                            <label id="605">
+                                                                <text-property name="text">cat_id</text-property>
+                                                            </label>
+                                                        </cell>
+                                                        <cell id="606">
+                                                            <label id="607">
+                                                                <text-property name="text">category</text-property>
+                                                            </label>
+                                                        </cell>
+                                                    </row>
+                                                </header>
+                                                <detail>
+                                                    <row id="608">
+                                                        <cell id="609">
+                                                            <data id="649">
+                                                                <property name="resultSetColumn">count</property>
+                                                            </data>
+                                                        </cell>
+                                                        <cell id="611">
+                                                            <data id="612">
+                                                                <property name="resultSetColumn">term</property>
+                                                            </data>
+                                                        </cell>
+                                                        <cell id="613">
+                                                            <data id="614">
+                                                                <property name="resultSetColumn">cat_id</property>
+                                                            </data>
+                                                        </cell>
+                                                        <cell id="615">
+                                                            <data id="616">
+                                                                <property name="resultSetColumn">category</property>
+                                                            </data>
+                                                        </cell>
+                                                    </row>
+                                                </detail>
+                                                <footer>
+                                                    <row id="617">
+                                                        <cell id="618"/>
+                                                        <cell id="619"/>
+                                                        <cell id="620"/>
+                                                        <cell id="621"/>
+                                                    </row>
+                                                </footer>
+                                            </table>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                    </grid>
+                    <grid id="664">
+                        <property name="width">300px</property>
+                        <column id="667">
+                            <property name="width">300px</property>
+                        </column>
+                        <row id="669">
+                            <cell id="674">
+                                <property name="paddingBottom">5px</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <label id="675">
+                                    <property name="fontFamily">"Lato"</property>
+                                    <property name="fontSize">12pt</property>
+                                    <property name="fontWeight">normal</property>
+                                    <property name="color">#373737</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">Key Stats</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="678">
+                            <cell id="683">
+                                <property name="paddingTop">1px</property>
+                                <property name="paddingLeft">5px</property>
+                                <property name="paddingBottom">1px</property>
+                                <property name="paddingRight">5px</property>
+                                <property name="verticalAlign">middle</property>
+                                <table id="684">
+                                    <list-property name="userProperties">
+                                        <structure>
+                                            <property name="name">__ac_group_collapse_level</property>
+                                            <property name="type">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="borderBottomStyle">none</property>
+                                    <property name="borderLeftStyle">none</property>
+                                    <property name="borderRightStyle">none</property>
+                                    <property name="borderTopStyle">none</property>
+                                    <property name="marginTop">75px</property>
+                                    <property name="marginLeft">10px</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">id</property>
+                                            <text-property name="displayName">id</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["id"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">publish_date</property>
+                                            <text-property name="displayName">publish_date</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["publish_date"]</expression>
+                                            <property name="dataType">date-time</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">tone</property>
+                                            <text-property name="displayName">tone</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["tone"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">category7</property>
+                                            <text-property name="displayName">category</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["category7"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">site</property>
+                                            <text-property name="displayName">site</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["site"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">SiteCount</property>
+                                            <text-property name="displayName">SiteCount</text-property>
+                                            <property name="dataType">integer</property>
+                                            <property name="aggregateFunction">COUNTDISTINCT</property>
+                                            <list-property name="arguments">
+                                                <structure>
+                                                    <property name="name">Expression</property>
+                                                    <expression name="value" type="javascript">row["site"]</expression>
+                                                </structure>
+                                            </list-property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">AssetCount</property>
+                                            <text-property name="displayName">AssetCount</text-property>
+                                            <property name="dataType">integer</property>
+                                            <property name="aggregateFunction">COUNTDISTINCT</property>
+                                            <list-property name="arguments">
+                                                <structure>
+                                                    <property name="name">Expression</property>
+                                                    <expression name="value" type="javascript">row["id"]</expression>
+                                                </structure>
+                                            </list-property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">Tweets</property>
+                                            <text-property name="displayName">Tweets</text-property>
+                                            <property name="dataType">integer</property>
+                                            <property name="aggregateFunction">COUNTDISTINCT</property>
+                                            <list-property name="arguments">
+                                                <structure>
+                                                    <property name="name">Expression</property>
+                                                    <expression name="value" type="javascript">row["id"]</expression>
+                                                </structure>
+                                            </list-property>
+                                            <expression name="filterExpr" type="javascript">row["site"] === "Twitter";</expression>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">DailyAssets</property>
+                                            <text-property name="displayName">DailyAssets</text-property>
+                                            <property name="dataType">integer</property>
+                                            <simple-property-list name="aggregateOn">
+                                                <value>DateGroup</value>
+                                            </simple-property-list>
+                                            <property name="aggregateFunction">COUNTDISTINCT</property>
+                                            <list-property name="arguments">
+                                                <structure>
+                                                    <property name="name">Expression</property>
+                                                    <expression name="value" type="javascript">row["id"]</expression>
+                                                </structure>
+                                            </list-property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                        <structure>
+                                            <property name="name">DailyAvg</property>
+                                            <text-property name="displayName">DailyAvg</text-property>
+                                            <property name="dataType">float</property>
+                                            <property name="aggregateFunction">AVE</property>
+                                            <list-property name="arguments">
+                                                <structure>
+                                                    <property name="name">Expression</property>
+                                                    <expression name="value" type="javascript">row["DailyAssets"]</expression>
+                                                </structure>
+                                            </list-property>
+                                            <property name="allowExport">true</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="linkedDataModel">MINDEF</property>
+                                    <column id="747"/>
+                                    <column id="748"/>
+                                    <column id="749"/>
+                                    <column id="750"/>
+                                    <column id="751"/>
+                                    <header>
+                                        <row id="685">
+                                            <property name="backgroundColor">#FFFFFF</property>
+                                            <cell id="686">
+                                                <property name="colSpan">5</property>
+                                                <property name="rowSpan">1</property>
+                                                <property name="backgroundColor">#FFFFFF</property>
+                                                <property name="borderBottomStyle">none</property>
+                                                <property name="borderLeftStyle">none</property>
+                                                <property name="borderRightStyle">none</property>
+                                                <property name="borderTopStyle">none</property>
+                                                <property name="paddingLeft">1pt</property>
+                                                <property name="paddingRight">1pt</property>
+                                                <property name="verticalAlign">middle</property>
+                                                <grid id="687">
+                                                    <property name="fontSize">24pt</property>
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <expression name="bookmark" type="javascript">"totaldocuments"</expression>
+                                                    <column id="688"/>
+                                                    <column id="689">
+                                                        <property name="textAlign">left</property>
+                                                    </column>
+                                                    <row id="690">
+                                                        <property name="backgroundColor">#008000</property>
+                                                        <property name="color">#FFFFFF</property>
+                                                        <property name="borderBottomStyle">none</property>
+                                                        <property name="borderLeftStyle">none</property>
+                                                        <property name="borderRightStyle">none</property>
+                                                        <property name="borderTopStyle">none</property>
+                                                        <property name="verticalAlign">middle</property>
+                                                        <cell id="691">
+                                                            <property name="borderBottomStyle">none</property>
+                                                            <property name="borderLeftStyle">none</property>
+                                                            <property name="borderRightStyle">none</property>
+                                                            <property name="borderTopStyle">none</property>
+                                                            <property name="paddingTop">5pt</property>
+                                                            <property name="paddingLeft">5pt</property>
+                                                            <property name="paddingBottom">5pt</property>
+                                                            <property name="paddingRight">5pt</property>
+                                                            <label id="692">
+                                                                <property name="fontSize">24pt</property>
+                                                                <property name="fontWeight">normal</property>
+                                                                <property name="textAlign">center</property>
+                                                                <text-property name="text">Assets</text-property>
+                                                            </label>
+                                                            <data id="694">
+                                                                <property name="fontSize">36pt</property>
+                                                                <structure name="numberFormat">
+                                                                    <property name="category">Fixed</property>
+                                                                    <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                                                </structure>
+                                                                <property name="resultSetColumn">AssetCount</property>
+                                                            </data>
+                                                        </cell>
+                                                        <cell id="693">
+                                                            <property name="borderBottomStyle">none</property>
+                                                            <property name="borderLeftStyle">none</property>
+                                                            <property name="borderRightStyle">none</property>
+                                                            <property name="borderTopStyle">none</property>
+                                                            <property name="paddingTop">5pt</property>
+                                                            <property name="paddingLeft">5pt</property>
+                                                            <property name="paddingBottom">5pt</property>
+                                                            <property name="paddingRight">5pt</property>
+                                                            <label id="1123">
+                                                                <property name="fontFamily">"FontAwesome"</property>
+                                                                <property name="fontSize">48pt</property>
+                                                                <property name="textAlign">center</property>
+                                                                <text-property name="text"></text-property>
+                                                            </label>
+                                                        </cell>
+                                                    </row>
+                                                </grid>
+                                                <grid id="990">
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <expression name="bookmark" type="javascript">"average"</expression>
+                                                    <column id="991">
+                                                        <property name="width">175px</property>
+                                                    </column>
+                                                    <column id="992">
+                                                        <property name="textAlign">left</property>
+                                                    </column>
+                                                    <row id="1003">
+                                                        <property name="backgroundColor">#004080</property>
+                                                        <property name="color">#FFFFFF</property>
+                                                        <property name="borderBottomStyle">none</property>
+                                                        <property name="borderLeftStyle">none</property>
+                                                        <property name="borderRightStyle">none</property>
+                                                        <property name="borderTopStyle">none</property>
+                                                        <property name="verticalAlign">middle</property>
+                                                        <cell id="1004">
+                                                            <property name="borderBottomStyle">none</property>
+                                                            <property name="borderLeftStyle">none</property>
+                                                            <property name="borderRightStyle">none</property>
+                                                            <property name="borderTopStyle">none</property>
+                                                            <property name="paddingTop">5pt</property>
+                                                            <property name="paddingLeft">5pt</property>
+                                                            <property name="paddingBottom">5pt</property>
+                                                            <property name="paddingRight">5pt</property>
+                                                            <label id="1005">
+                                                                <property name="fontSize">24pt</property>
+                                                                <property name="fontWeight">normal</property>
+                                                                <property name="textAlign">center</property>
+                                                                <text-property name="text">Daily Avg</text-property>
+                                                            </label>
+                                                            <data id="1007">
+                                                                <property name="fontSize">36pt</property>
+                                                                <structure name="numberFormat">
+                                                                    <property name="category">Fixed</property>
+                                                                    <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                                                                </structure>
+                                                                <property name="resultSetColumn">DailyAvg</property>
+                                                            </data>
+                                                        </cell>
+                                                        <cell id="1006">
+                                                            <property name="borderBottomStyle">none</property>
+                                                            <property name="borderLeftStyle">none</property>
+                                                            <property name="borderRightStyle">none</property>
+                                                            <property name="borderTopStyle">none</property>
+                                                            <property name="paddingTop">5pt</property>
+                                                            <property name="paddingLeft">5pt</property>
+                                                            <property name="paddingBottom">5pt</property>
+                                                            <property name="paddingRight">5pt</property>
+                                                            <label id="1124">
+                                                                <property name="fontFamily">"FontAwesome"</property>
+                                                                <property name="fontSize">48pt</property>
+                                                                <property name="textAlign">center</property>
+                                                                <text-property name="text"></text-property>
+                                                            </label>
+                                                        </cell>
+                                                    </row>
+                                                </grid>
+                                                <grid id="922">
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <expression name="bookmark" type="javascript">"sources"</expression>
+                                                    <column id="923"/>
+                                                    <column id="924">
+                                                        <property name="textAlign">left</property>
+                                                    </column>
+                                                    <row id="930">
+                                                        <property name="backgroundColor">#EA7500</property>
+                                                        <property name="color">#FFFFFF</property>
+                                                        <property name="verticalAlign">middle</property>
+                                                        <cell id="931">
+                                                            <property name="borderBottomStyle">none</property>
+                                                            <property name="borderLeftStyle">none</property>
+                                                            <property name="borderRightStyle">none</property>
+                                                            <property name="borderTopStyle">none</property>
+                                                            <property name="paddingTop">5pt</property>
+                                                            <property name="paddingLeft">5pt</property>
+                                                            <property name="paddingBottom">5pt</property>
+                                                            <property name="paddingRight">5pt</property>
+                                                            <label id="932">
+                                                                <property name="fontSize">24pt</property>
+                                                                <property name="fontWeight">normal</property>
+                                                                <property name="textAlign">center</property>
+                                                                <text-property name="text">Sources</text-property>
+                                                            </label>
+                                                            <data id="934">
+                                                                <property name="fontSize">36pt</property>
+                                                                <structure name="numberFormat">
+                                                                    <property name="category">Fixed</property>
+                                                                    <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                                                </structure>
+                                                                <property name="resultSetColumn">SiteCount</property>
+                                                            </data>
+                                                        </cell>
+                                                        <cell id="933">
+                                                            <property name="borderBottomStyle">none</property>
+                                                            <property name="borderLeftStyle">none</property>
+                                                            <property name="borderRightStyle">none</property>
+                                                            <property name="borderTopStyle">none</property>
+                                                            <property name="paddingTop">5pt</property>
+                                                            <property name="paddingLeft">5pt</property>
+                                                            <property name="paddingBottom">5pt</property>
+                                                            <property name="paddingRight">5pt</property>
+                                                            <label id="1125">
+                                                                <property name="fontFamily">"FontAwesome"</property>
+                                                                <property name="fontSize">48pt</property>
+                                                                <property name="textAlign">center</property>
+                                                                <text-property name="text"></text-property>
+                                                            </label>
+                                                        </cell>
+                                                    </row>
+                                                </grid>
+                                                <grid id="1058">
+                                                    <property name="color">#FFFFFF</property>
+                                                    <property name="borderBottomStyle">none</property>
+                                                    <property name="borderLeftStyle">none</property>
+                                                    <property name="borderRightStyle">none</property>
+                                                    <property name="borderTopStyle">none</property>
+                                                    <expression name="bookmark" type="javascript">"tweets"</expression>
+                                                    <column id="1059"/>
+                                                    <column id="1060">
+                                                        <property name="textAlign">left</property>
+                                                    </column>
+                                                    <row id="1076">
+                                                        <property name="backgroundColor">#0080C0</property>
+                                                        <property name="verticalAlign">middle</property>
+                                                        <cell id="1077">
+                                                            <property name="borderBottomStyle">none</property>
+                                                            <property name="borderLeftStyle">none</property>
+                                                            <property name="borderRightStyle">none</property>
+                                                            <property name="borderTopStyle">none</property>
+                                                            <property name="paddingTop">5pt</property>
+                                                            <property name="paddingLeft">5pt</property>
+                                                            <property name="paddingBottom">5pt</property>
+                                                            <property name="paddingRight">5pt</property>
+                                                            <label id="1078">
+                                                                <property name="fontSize">24pt</property>
+                                                                <property name="fontWeight">normal</property>
+                                                                <property name="textAlign">center</property>
+                                                                <text-property name="text">Tweets</text-property>
+                                                            </label>
+                                                            <data id="1080">
+                                                                <property name="fontSize">36pt</property>
+                                                                <structure name="numberFormat">
+                                                                    <property name="category">Fixed</property>
+                                                                    <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                                                </structure>
+                                                                <property name="resultSetColumn">Tweets</property>
+                                                            </data>
+                                                        </cell>
+                                                        <cell id="1079">
+                                                            <property name="borderBottomStyle">none</property>
+                                                            <property name="borderLeftStyle">none</property>
+                                                            <property name="borderRightStyle">none</property>
+                                                            <property name="borderTopStyle">none</property>
+                                                            <property name="paddingTop">5pt</property>
+                                                            <property name="paddingLeft">5pt</property>
+                                                            <property name="paddingBottom">5pt</property>
+                                                            <property name="paddingRight">5pt</property>
+                                                            <label id="1126">
+                                                                <property name="fontFamily">"FontAwesome"</property>
+                                                                <property name="fontSize">52pt</property>
+                                                                <property name="textAlign">center</property>
+                                                                <text-property name="text"></text-property>
+                                                            </label>
+                                                        </cell>
+                                                    </row>
+                                                </grid>
+                                            </cell>
+                                        </row>
+                                        <row id="710">
+                                            <list-property name="visibility">
+                                                <structure>
+                                                    <property name="format">all</property>
+                                                    <expression name="valueExpr" type="javascript">true</expression>
+                                                </structure>
+                                            </list-property>
+                                            <cell id="711">
+                                                <label id="712">
+                                                    <text-property name="text">site</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="713">
+                                                <label id="714">
+                                                    <text-property name="text">id</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="715">
+                                                <label id="716">
+                                                    <text-property name="text">publish_date</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="717">
+                                                <label id="718">
+                                                    <text-property name="text">tone</text-property>
+                                                </label>
+                                            </cell>
+                                            <cell id="719">
+                                                <label id="720">
+                                                    <text-property name="text">category</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                    </header>
+                                    <group id="721">
+                                        <property name="groupName">DateGroup</property>
+                                        <property name="interval">day</property>
+                                        <expression name="keyExpr" type="javascript">row["publish_date"]</expression>
+                                        <structure name="toc">
+                                            <expression name="expressionValue" type="javascript">row["publish_date"]</expression>
+                                        </structure>
+                                        <property name="hideDetail">false</property>
+                                        <header>
+                                            <row id="722">
+                                                <list-property name="visibility">
+                                                    <structure>
+                                                        <property name="format">all</property>
+                                                        <expression name="valueExpr" type="javascript">true</expression>
+                                                    </structure>
+                                                </list-property>
+                                                <cell id="723">
+                                                    <data id="724">
+                                                        <property name="resultSetColumn">publish_date</property>
+                                                    </data>
+                                                </cell>
+                                                <cell id="725"/>
+                                                <cell id="726">
+                                                    <data id="727">
+                                                        <property name="resultSetColumn">DailyAssets</property>
+                                                    </data>
+                                                </cell>
+                                                <cell id="728"/>
+                                                <cell id="729"/>
+                                            </row>
+                                        </header>
+                                    </group>
+                                    <detail>
+                                        <row id="730">
+                                            <list-property name="visibility">
+                                                <structure>
+                                                    <property name="format">all</property>
+                                                    <expression name="valueExpr" type="javascript">true</expression>
+                                                </structure>
+                                            </list-property>
+                                            <cell id="731">
+                                                <data id="732">
+                                                    <property name="resultSetColumn">site</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="733">
+                                                <data id="734">
+                                                    <property name="resultSetColumn">id</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="735">
+                                                <data id="736">
+                                                    <property name="resultSetColumn">publish_date</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="737">
+                                                <data id="738">
+                                                    <property name="resultSetColumn">tone</property>
+                                                </data>
+                                            </cell>
+                                            <cell id="739">
+                                                <data id="740">
+                                                    <property name="resultSetColumn">category7</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </detail>
+                                    <footer>
+                                        <row id="741">
+                                            <list-property name="visibility">
+                                                <structure>
+                                                    <property name="format">all</property>
+                                                    <expression name="valueExpr" type="javascript">true</expression>
+                                                </structure>
+                                            </list-property>
+                                            <cell id="742"/>
+                                            <cell id="743"/>
+                                            <cell id="744"/>
+                                            <cell id="745"/>
+                                            <cell id="746"/>
+                                        </row>
+                                    </footer>
+                                </table>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application xmlns="http://www.actuate.com/birt/infoapp/designer/ui/descriptor" name="OTCAExamples">
+    <acl>
+        <permission>
+            <role-name>All</role-name>
+            <access-right>REV</access-right>
+        </permission>
+        <permission>
+            <role-name>Administrators</role-name>
+            <access-right>RWEDGSV</access-right>
+        </permission>
+    </acl>
+</application>
