@@ -553,6 +553,15 @@
         </simple-master-page>
     </page-setup>
     <body>
+        <label id="580">
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">true</expression>
+                </structure>
+            </list-property>
+            <text-property name="text">IMPORTANT NOTE: This design uses a Google Map API key. If this will be deployed in the TestDrive environment, see Dan Melcher for a key that only works in TestDrive. If not, you must register for a key yourself and insert it in the script code below. </text-property>
+        </label>
         <grid id="134">
             <property name="fontFamily">"Lato"</property>
             <property name="textAlign">center</property>
@@ -955,7 +964,7 @@ actuate.birt.maps.google = {
 
     start: function() {
         if (window["google"] === undefined || google["maps"] === undefined) {
-            var autoloadJSON = "{modules:[{name:\"maps\",key:\"AIzaSyDX81_IA8XWMWAOLNf5ciNvaBHbS1PGrqY\",version:3,callback:\"actuate.birt.maps.google.createMap\"}]}";
+            var autoloadJSON = "{modules:[{name:\"maps\",key:\"Your Google Maps API key goes here\",version:3,callback:\"actuate.birt.maps.google.createMap\"}]}";
             var scriptSrc = "http://www.google.com/jsapi?autoload=" + encodeURIComponent(autoloadJSON);
             actuate.birt.util.loadResources({scripts: [scriptSrc]});
         } else {
