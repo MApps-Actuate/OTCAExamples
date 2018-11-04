@@ -736,7 +736,7 @@ function drawMap() {
 ////		// After successfully loading google jsapi , we need to load the visualization.
 ////		google.charts.load('current', {
 ////			'packages' : [ 'map' ],
-////			'other_params' : 'key=AIzaSyDi-A-jkIkioXs40iP63CP1Y_A9Es7De1A' });
+////			'other_params' : 'key=your key goes here' });
 ////		google.charts.setOnLoadCallback( drawMap );
 ////	}
 ////});  green  http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=+|00EE00|000000
@@ -748,7 +748,7 @@ var callback = function() {
 	
 google.charts.load('current', {
 	'packages' : [ 'map' ],
-	'mapsApiKey': 'AIzaSyDX81_IA8XWMWAOLNf5ciNvaBHbS1PGrqY'
+	'mapsApiKey': 'your key goes here'
 	 });
 google.charts.setOnLoadCallback( drawMap );	
 
