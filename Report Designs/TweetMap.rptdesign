@@ -693,6 +693,7 @@ function drawMap() {
 	var options = {
 		showTooltip : false,
 		showInfoWindow: true,
+		zoomLevel: 3,
 		icons: {
             Positive: {
               normal: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=+|00EE00|000000',
@@ -748,7 +749,7 @@ var callback = function() {
 	
 google.charts.load('current', {
 	'packages' : [ 'map' ],
-	'mapsApiKey': 'your key goes here'
+	'mapsApiKey': 'AIzaSyDX81_IA8XWMWAOLNf5ciNvaBHbS1PGrqY'
 	 });
 google.charts.setOnLoadCallback( drawMap );	
 
@@ -760,7 +761,7 @@ head.load ('https://maps.googleapis.com/maps/api/js?key=AIzaSyDi-A-jkIkioXs40iP6
 
 
 ]]></method>
-            <property name="height">480px</property>
+            <property name="height">702px</property>
             <property name="width">100%</property>
             <property name="dataSet">Tweets</property>
             <list-property name="boundDataColumns">
