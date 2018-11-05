@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201603260016</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201804241733</property>
     <list-property name="propertyBindings">
         <structure>
             <property name="name">resultType</property>
@@ -150,7 +150,6 @@
                     <property name="analysis">dimension</property>
                 </structure>
             </list-property>
-            <list-property name="filter"/>
             <list-property name="parameters">
                 <structure>
                     <property name="name">searchText</property>
