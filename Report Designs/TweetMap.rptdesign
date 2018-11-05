@@ -749,7 +749,7 @@ var callback = function() {
 	
 google.charts.load('current', {
 	'packages' : [ 'map' ],
-	'mapsApiKey': 'AIzaSyDX81_IA8XWMWAOLNf5ciNvaBHbS1PGrqY'
+	'mapsApiKey': 'your key goes here'
 	 });
 google.charts.setOnLoadCallback( drawMap );	
 
