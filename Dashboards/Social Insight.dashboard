@@ -10,7 +10,7 @@
     </list-property>
     <property name="dashboardView">
         <dashboard id="2">
-            <property name="activeTab">180a3b33-87c3-4efd-af27-ac689d7b111c</property>
+            <property name="activeTab">2148506c-efa0-4641-9993-dc6dbb130779</property>
             <property name="tabs">
                 <tab-element name="180a3b33-87c3-4efd-af27-ac689d7b111c" id="3">
                     <property name="title">Social Insight Dashboard</property>
@@ -19,8 +19,6 @@
                         <gadget name="Gadget_928881d4-3754-415c-8886-a59b48df7f57" id="9">
                             <property name="x">18px</property>
                             <property name="y">18px</property>
-                            <property name="height">111px</property>
-                            <property name="width">325px</property>
                             <property name="title">Reportlet - SocialInsight - sources</property>
                             <property name="externalGadgetURI">^/Report Designs/SocialInsight.rptdocument</property>
                             <property name="showTitle">false</property>
@@ -63,8 +61,6 @@
                         <gadget name="f7d977a8-310c-4541-8aae-8cccb96c6fa8" id="6">
                             <property name="x">10px</property>
                             <property name="y">11px</property>
-                            <property name="height">150px</property>
-                            <property name="width">266px</property>
                             <property name="zIndex">1</property>
                             <property name="isVisible">false</property>
                             <property name="height">150px</property>
@@ -86,8 +82,6 @@
                         <gadget name="Gadget_98fbd93f-d429-46ca-b99b-b720dc7f4776" id="12">
                             <property name="x">378px</property>
                             <property name="y">18px</property>
-                            <property name="height">111px</property>
-                            <property name="width">325px</property>
                             <property name="title">Reportlet - SocialInsight - average</property>
                             <property name="externalGadgetURI">^/Report Designs/SocialInsight.rptdocument</property>
                             <property name="showTitle">true</property>
@@ -130,8 +124,6 @@
                         <gadget name="Gadget_a1b4937f-656a-402c-8874-249c5edb9e31" id="15">
                             <property name="x">738px</property>
                             <property name="y">18px</property>
-                            <property name="height">111px</property>
-                            <property name="width">325px</property>
                             <property name="title">Reportlet - SocialInsight - totaldocuments</property>
                             <property name="externalGadgetURI">^/Report Designs/SocialInsight.rptdocument</property>
                             <property name="showTitle">false</property>
@@ -174,8 +166,6 @@
                         <gadget name="Gadget_ea72f186-336b-476c-9865-9d4bdf9f7d66" id="18">
                             <property name="x">1098px</property>
                             <property name="y">18px</property>
-                            <property name="height">112px</property>
-                            <property name="width">325px</property>
                             <property name="title">Reportlet - SocialInsight - tweets</property>
                             <property name="externalGadgetURI">^/Report Designs/SocialInsight.rptdocument</property>
                             <property name="showTitle">true</property>
@@ -218,8 +208,6 @@
                         <gadget name="Gadget_7b4c521f-36ab-49be-bad4-52487a196a3c" id="21">
                             <property name="x">18px</property>
                             <property name="y">162px</property>
-                            <property name="height">353px</property>
-                            <property name="width">1406px</property>
                             <property name="title">Reportlet - SocialInsight - SentimentHistory</property>
                             <property name="externalGadgetURI">^/Report Designs/SocialInsight.rptdocument</property>
                             <property name="showTitle">true</property>
@@ -262,8 +250,6 @@
                         <gadget name="Gadget_7321a7c6-ef76-42ea-92bc-49b4f56e3c5c" id="24">
                             <property name="x">18px</property>
                             <property name="y">546px</property>
-                            <property name="height">411px</property>
-                            <property name="width">1406px</property>
                             <property name="title">Reportlet - SocialInsight - TopicWordCloud</property>
                             <property name="externalGadgetURI">^/Report Designs/SocialInsight.rptdocument</property>
                             <property name="showTitle">true</property>
@@ -313,7 +299,6 @@
                             <property name="width">100%</property>
                             <property name="gadgets">
                                 <gadget name="Gadget_f60c04b7-86b0-45e1-a3ab-30dd2eb4371a" id="33">
-                                    <property name="height">900px</property>
                                     <property name="title">Report - TweetMap</property>
                                     <property name="externalGadgetURI">^/Report Designs/TweetMap.rptdesign</property>
                                     <property name="showTitle">true</property>
@@ -352,7 +337,6 @@
                                     </property>
                                 </gadget>
                                 <gadget name="b2886fb0-c183-48f1-8847-058f61404744" id="30">
-                                    <property name="height">150px</property>
                                     <property name="zIndex">1</property>
                                     <property name="isVisible">false</property>
                                     <property name="height">150px</property>
@@ -382,7 +366,6 @@
                             <property name="width">60.71895424836601%</property>
                             <property name="gadgets">
                                 <gadget name="Gadget_66ed7b73-dcb0-4035-b99f-a2e787dd6f69" id="48">
-                                    <property name="height">50px</property>
                                     <property name="title">Enter Search Term Or Hashtag</property>
                                     <property name="showTitle">false</property>
                                     <property name="showBorder">true</property>
@@ -447,6 +430,39 @@
                                                 <event-object>
                                                     <property name="appliedTo">query</property>
                                                     <property name="gadget">Gadget_086d4d94-d112-491e-aa58-f956cdc9a2dd</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="52d4ded5-4fd8-4c9e-85c1-dd56726830b5" id="39">
+                                    <property name="zIndex">1</property>
+                                    <property name="isVisible">false</property>
+                                    <property name="height">150px</property>
+                                    <property name="caption">
+                                        <gadget-caption id="41">
+                                            <property name="showCaption">true</property>
+                                            <property name="horizontalAlignment">left</property>
+                                            <property name="fontFamily">"Lato"</property>
+                                            <property name="fontSize">24pt</property>
+                                            <property name="fontWeight">bold</property>
+                                            <property name="color">#000000</property>
+                                        </gadget-caption>
+                                    </property>
+                                    <property name="content">
+                                        <current-selections id="40"/>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_fb8e2216-cab4-45e8-987a-6aca9d83c0e9</property>
+                                                    <property name="dirty">false</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_66ed7b73-dcb0-4035-b99f-a2e787dd6f69</property>
                                                     <property name="dirty">false</property>
                                                 </event-object>
                                             </property>
@@ -531,47 +547,12 @@
                                         </event-subscriber>
                                     </property>
                                 </gadget>
-                                <gadget name="52d4ded5-4fd8-4c9e-85c1-dd56726830b5" id="39">
-                                    <property name="height">150px</property>
-                                    <property name="zIndex">1</property>
-                                    <property name="isVisible">false</property>
-                                    <property name="height">150px</property>
-                                    <property name="caption">
-                                        <gadget-caption id="41">
-                                            <property name="showCaption">true</property>
-                                            <property name="horizontalAlignment">left</property>
-                                            <property name="fontFamily">"Lato"</property>
-                                            <property name="fontSize">24pt</property>
-                                            <property name="fontWeight">bold</property>
-                                            <property name="color">#000000</property>
-                                        </gadget-caption>
-                                    </property>
-                                    <property name="content">
-                                        <current-selections id="40"/>
-                                    </property>
-                                    <property name="subscribeTo">
-                                        <event-subscriber>
-                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
-                                            <property name="eventObjects">
-                                                <event-object>
-                                                    <property name="gadget">Gadget_fb8e2216-cab4-45e8-987a-6aca9d83c0e9</property>
-                                                    <property name="dirty">false</property>
-                                                </event-object>
-                                                <event-object>
-                                                    <property name="gadget">Gadget_66ed7b73-dcb0-4035-b99f-a2e787dd6f69</property>
-                                                    <property name="dirty">false</property>
-                                                </event-object>
-                                            </property>
-                                        </event-subscriber>
-                                    </property>
-                                </gadget>
                             </property>
                         </section>
                         <section id="38">
                             <property name="width">39.28104575163399%</property>
                             <property name="gadgets">
                                 <gadget name="Gadget_fb8e2216-cab4-45e8-987a-6aca9d83c0e9" id="45">
-                                    <property name="height">50px</property>
                                     <property name="title">Max Tweets To Analyze</property>
                                     <property name="showTitle">false</property>
                                     <property name="showBorder">true</property>
@@ -728,8 +709,6 @@
                         <gadget name="Gadget_086d4d94-d112-491e-aa58-f956cdc9a2dd" id="54">
                             <property name="x">12px</property>
                             <property name="y">657px</property>
-                            <property name="height">500px</property>
-                            <property name="width">1516px</property>
                             <property name="title">Tweets</property>
                             <property name="externalGadgetURI">^/Report Designs/TwitterODA.rptdesign</property>
                             <property name="showTitle">false</property>
