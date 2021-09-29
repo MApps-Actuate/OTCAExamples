@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201603260016</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.11.0.v202101151752</property>
     <html-property name="description">WizardTemplateChoicePage.message.BlankAuto</html-property>
     <list-property name="propertyBindings">
         <structure>

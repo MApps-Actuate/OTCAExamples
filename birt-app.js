@@ -2,6 +2,7 @@
  * author: Pierre Tessier
  * version 1.0.2
  * updated: document.body.clientHeight changed to window.innerHeight (cwong 02-11-2016)
+ * updated: function renderDashboard(dashboardName)  {Sobhana Somisetty Sept 10 2021)
  */
 
 var $ = actuate.common.web.$; //assign jQuery to standard $ variable.
@@ -59,9 +60,15 @@ function renderApp() {
 
 function renderDashboard(dashboardName) {
 	
+	var width = $("#dashboardContainer").width();
+	//var height = $("#dashboardContainer").height();
+	var height = $(window).height();
+	//console.log (width);
+	//console.log (height);
+	
 	if (birtApp.dashboard) {
 		birtApp.dashboard.onUnload();
-		birtApp.dashbaord = null;
+		birtApp.dashboard = null;
 	}
 	
     // the DOM element id "dashboardContainer" is actually hard coded inside of dashboard.js.  
@@ -69,16 +76,13 @@ function renderDashboard(dashboardName) {
 	birtApp.dashboard = new actuate.Dashboard("dashboardContainer", true);
 	birtApp.dashboard.setDashboardName(dashboardName);
 					
-	if (birtApp.editMode)
-		birtApp.dashboard.setIsDesigner(true);			
-	
-	birtApp.dashboard.submit(function () {
-		// do this to remove horizontal scrolling when a vertical scroll bar is needed for dashboard 
-		$(".actuate-widget-panel-body .actuate-widget-panel-body-noheader .actuate-widget-panel-body-noborder").css({overflowX: "hidden"});
-
-		if (birtApp.submitCallback)
-			birtApp.submitCallback();
-	});
+//if (birtApp.editMode) 
+	//	birtApp.dashboard.setIsDesigner(true);	
+	//debugger;
+	birtApp.dashboard.setIsDesigner(false);
+	birtApp.dashboard.setHeight(height);
+	birtApp.dashboard.setWidth(width)
+	birtApp.dashboard.submit( function() {} );
 }
 
 function renderReport(reportName, reportParameters) {
