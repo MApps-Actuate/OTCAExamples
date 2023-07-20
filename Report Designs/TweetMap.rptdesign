@@ -609,7 +609,8 @@ else '#DDDDDD'</expression>
  * See in-line comments for more details.
  */
  
- var gMapsApiKey = 'AIzaSyDX81_IA8XWMWAOLNf5ciNvaBHbS1PGrqY';
+ /* Add Google map api key here. Remove it before syncing to Github repo */
+ var gMapsApiKey = '';
 
 var config = {
 	/*
