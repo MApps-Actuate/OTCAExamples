@@ -150,7 +150,6 @@
                     <property name="analysis">dimension</property>
                 </structure>
             </list-property>
-            <list-property name="filter"/>
             <list-property name="parameters">
                 <structure>
                     <property name="name">searchText</property>

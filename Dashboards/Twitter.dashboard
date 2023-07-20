@@ -10,9 +10,23 @@
     </list-property>
     <property name="dashboardView">
         <dashboard id="2">
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">dashboardTheme</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <property name="dashboardTheme">ThemesReportItems3.Classic:Light</property>
             <property name="activeTab">2148506c-efa0-4641-9993-dc6dbb130779</property>
             <property name="tabs">
                 <tab-element name="2148506c-efa0-4641-9993-dc6dbb130779" id="36">
+                    <list-property name="userProperties">
+                        <structure>
+                            <property name="name">tabTheme</property>
+                            <property name="type">string</property>
+                        </structure>
+                    </list-property>
+                    <property name="tabTheme">ThemesReportItems3.Classic:Light</property>
                     <property name="title">Tweet Activity</property>
                     <property name="backgroundColor">RGB(255,255,255)</property>
                     <property name="sections">
@@ -20,7 +34,6 @@
                             <property name="width">60.71895424836601%</property>
                             <property name="gadgets">
                                 <gadget name="Gadget_66ed7b73-dcb0-4035-b99f-a2e787dd6f69" id="48">
-                                    <property name="height">50px</property>
                                     <property name="title">Enter Search Term Or Hashtag</property>
                                     <property name="showTitle">false</property>
                                     <property name="showBorder">true</property>
@@ -170,7 +183,6 @@
                                     </property>
                                 </gadget>
                                 <gadget name="52d4ded5-4fd8-4c9e-85c1-dd56726830b5" id="39">
-                                    <property name="height">150px</property>
                                     <property name="zIndex">1</property>
                                     <property name="isVisible">false</property>
                                     <property name="height">150px</property>
@@ -209,7 +221,6 @@
                             <property name="width">39.28104575163399%</property>
                             <property name="gadgets">
                                 <gadget name="Gadget_fb8e2216-cab4-45e8-987a-6aca9d83c0e9" id="45">
-                                    <property name="height">50px</property>
                                     <property name="title">Max Tweets To Analyze</property>
                                     <property name="showTitle">false</property>
                                     <property name="showBorder">true</property>
@@ -366,8 +377,6 @@
                         <gadget name="Gadget_086d4d94-d112-491e-aa58-f956cdc9a2dd" id="54">
                             <property name="x">12px</property>
                             <property name="y">657px</property>
-                            <property name="height">500px</property>
-                            <property name="width">1516px</property>
                             <property name="title">Tweets</property>
                             <property name="externalGadgetURI">^/Report Designs/TwitterODA.rptdesign</property>
                             <property name="showTitle">false</property>

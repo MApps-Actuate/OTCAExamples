@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201804241733</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.11.0.v202101151752</property>
     <property name="units">in</property>
     <property name="theme">ThemesReportItems31.Modern</property>
     <property name="iconFile">/templates/blank_report.gif</property>
@@ -608,6 +608,8 @@ else '#DDDDDD'</expression>
 /* This is the configuration object for creating the chart. You modify it to map your own data.
  * See in-line comments for more details.
  */
+ 
+ var gMapsApiKey = 'AIzaSyDX81_IA8XWMWAOLNf5ciNvaBHbS1PGrqY';
 
 var config = {
 	/*
@@ -749,19 +751,19 @@ var callback = function() {
 	
 google.charts.load('current', {
 	'packages' : [ 'map' ],
-	'mapsApiKey': 'your key goes here'
+	'mapsApiKey': gMapsApiKey
 	 });
 google.charts.setOnLoadCallback( drawMap );	
 
 }
 
 
-
-head.load ('https://maps.googleapis.com/maps/api/js?key=AIzaSyDi-A-jkIkioXs40iP63CP1Y_A9Es7De1A','https://www.gstatic.com/charts/loader.js','https://www.google.com/jsapi', callback);
+var sMapsURL = 'https://maps.googleapis.com/maps/api/js?key=' + gMapsApiKey;
+head.load (sMapsURL,'https://www.gstatic.com/charts/loader.js','https://www.google.com/jsapi', callback);
 
 
 ]]></method>
-            <property name="height">702px</property>
+            <property name="height">800px</property>
             <property name="width">100%</property>
             <property name="dataSet">Tweets</property>
             <list-property name="boundDataColumns">
