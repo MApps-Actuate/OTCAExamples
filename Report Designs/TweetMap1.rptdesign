@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.11.0.v202101151752</property>
+    <property name="units">in</property>
+    <property name="theme">ThemesReportItems31.Modern</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.datatools.connectivity.oda.flatfile" name="CSV" id="512">
+            <property name="URI">Data/Tweets.csv</property>
+            <property name="DELIMTYPE">COMMA</property>
+            <property name="CHARSET">UTF-8</property>
+            <property name="INCLCOLUMNNAME">YES</property>
+            <property name="INCLTYPELINE">NO</property>
+            <property name="TRAILNULLCOLS">NO</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.datatools.connectivity.oda.flatfile.dataSet" name="Tweets" id="513">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">infoWindowContent</property>
+                    <expression name="expression" type="javascript">'&lt;div style="padding:5px 5px 5px 5px; width: 425px;">' +&#13;
+      '&lt;table>' + '&lt;tr>' +&#13;
+      '&lt;td>&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMqSURBVGhD7Zg7aBRBGMfX3TvBRrFQFMEHqFiIiDZ2QkC00cqAxCqYQkUQxMInIQRNIaYIiAFRUDGZWS6C2FloYWPlk4AgaqGixaF3N7OJz2z+s/ep590Y93ZnNxbzgz+7uex+r3nszDgWi8VisVhmi9LECpcH+z0mBz0uL7hMnirw2lbHDz16opUwnEN3CeFT89IbIcbkUgQ/4nHxAwmELWLyhceCnfR0nRuVhS6Xp5FsN/2SDBg56jExQH8mpsjEeth5q02gUUxMQWdUi7lc3MZ9gMTfOf7HBWQqGajSc+UAFTlOP7UPry1CQG9ago4jJr4gkY7ITuKegW4VVei34SGnN3Tpv7GBjYsNNuKLyTJapQv3O5DMpWgcJWK0urbZOLraXYcHy+iJf3O9PB+JfG62E09C/rxX44QsJgAD7U/DJFUpJnvitI7Hg11aG21JnE094cDQh1bDdblMPEK1O2eaNtE1DuvejSUmvkcFMwGqf17rpFFMvELV+osjYgO99gskckj7ThwxWSEzBvAnlsNotcXJ38TEe7TULVz70K/34TqgfS6OYIuiMAMC2wOjjbNXPsIHkkJIR5HJTVTdTlT3JLrPV63DjBTNkEbw5RKdg/wkhimS9KAqz/ROspcaYxRGelxeO6BzkoecUnUNhWGAe2EBU+gDnaNMxeQ4RWCQ+vI7WjzmJXwIe8m7YeprpsvQN51jo8KKVxWPPBtmdHJl0ZcbMR3vxSB8og3AmMQV8mqeAgu26J0aFlbKaitMbrMBjvwWx8Yl+sldhmC7iRnssT6A9MIAf4qV9FzyljHqMICJm7pAUkmtdEu1deQlP9S2E/35GrrC6/RrMLzffHqSNwiiAwm91AcYQ9g8eby2m8zlT3S8w8VVBJJ8eY/uBG0nkzmCPuyy2kEMyjupEoAwaTzMZ0zwyVWo+DCCvk/Lk/i7xJnEpMAH9YRaw5GnHOgNXSTSraZFbVDtiMlP0KAzJhaT9dmh6AebEdAQghlHS+nPbpvFZBli6EZd0Rnyfwc+jEhmG1qqx/XlMYyXc6rauPYh6CPqLMvhldVJTiUtFovFYrFYHGcazS5/dDE9KGwAAAAASUVORK5CYII=">&lt;/td>' +&#13;
+      '&lt;td>&lt;div style="font-size: 12pt">' + row["User"] + '&lt;/div>&lt;div style="font-size: 9pt; color: silver">@' + row["Handle"] + '&lt;/div>&lt;div style="font-size: 9pt; color: silver">' + row["DateTime"] + '&lt;/div>' + '&lt;/td>' +&#13;
+      '&lt;td>&lt;div style="text-align: center; padding-left: 11px">&lt;img style="width: 24px; height: 24px; display: block;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHXSURBVGhD7Zi/LgVBFMZXiESr9AI0alFKvIHwBgoPoPAACrXKv/eQ3FLQEIVCQ6HQakShwfdFJJ/J2Z3ZuzMj4vySX3Kv7Jxxsnvu7DmN4ziO4zj/iEm48vXxB6vwoKD7cAcuwwk4mD34BhlQmYYX8KOCl3ABjs06fIcM9gTnoMLv/Hu4cQmf4SLsDRe9Qg12DnknFN4p3jG9rpS3cAomMwvvoRXsEIbwzlnP+RBP4AMM91+DSbC4T2EYQN2ENZiBN1D3PoZJsLh1oaVV/KXYhrr3CEbR4o5pFX8JtqDuewY7sYo7Jn9+w+LPTa9Euoo75hEsSa9EduGV4QvUII/Qus46+XPR+9Gy4CINwqC18UQUTyQjnojiiWTEE1FqJsJD1TpseQjr/8BD2rqOh3orte8IX3d0v1T5esXXrFZqJzLOHIAvutEW+DdqpM8cgC0HW48obGJ0IZucGqTOAdgEJsG+WRdeQ7afNWA7rXuHsh1nW57EBgwDcCDABK2BwRCtR4SDjnB/Gi3uEI5e7qAVLLdtQ0COoPS6pOK24CIOxzRYKWNDwOTibmMecmwZblxCaw7wXfzJxd0FB8lLkINlDpit5zyXHJCH8ORPLm7HcRzHcf42TfMJ9ioGktulMkgAAAAASUVORK5CYII=">&lt;/div>&lt;div style="text-align: center">' + row["Retweets"] + '&lt;/div>&lt;/td>' +&#13;
+      '&lt;td>&lt;div style="text-align: center; padding-left: 11px">&lt;img style="width: 24px; height: 24px; display: block;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIbSURBVGhD7dk5ixRBAIbh8cLIA49gETUwUNBI/AdeLLiCqLmRaOIViT9BREVjjQwV1mVRkwVPUDxR1F+gkRpopqK+H/SCLN9MVdd099RCvfCww8xUdW2wO9U1vVKpVCqVOmwbzuAyblQ/T2AzUtuCk/h/Tl1jKxptAQ7jI/4O8AoHofeH0nsOQWPcXLPeI3bOga3EPbiL9PMIm9AvvfYEbmw/d7ACSa3FB7iJQ75jH+am537AjQnRWlahVkswAzdhrF84gtn0WM+598bSmhYhuuNwE9X1B8cqeuzeU9dRRLUUn+EmSfG74l5L8QlaY7BxuAlysgfBrsINzskVBNO/Ojc4J9MI9hJucE5eINhjuME5eYhgt+AG5+Qmgl2EG5yTCwi2H25wTiYQTBvFJj/AmqZtznJEdRtukhxMIrq9cJPkYBeiW4h3cBON0hvUvsnSfsZNNko7kZS2Am7CUdDfbXLr8BVu4i59wRiGSocEbvIuHUAjXYK7QBfOo7F0n3wX7kJtmkKte/SYdBzzDO6CbXiKZWglHce8hbtwk14j+RwrtjVo8+brOVajk7RpewC3kGHcR/SGsKl0JHMdbkEpriHqmKetTmGYbb+25TrRz6Ld+Aa30EG0a0jeP7XVRuhQwC3Y0d/DBmSZPrzO4Sfc4kWvnYVuFbJvB3TvMPeX0OfDdsyrFkNfoen7EDldPTdvW18plUqlYev1/gGH8hti6n8nhwAAAABJRU5ErkJggg==">&lt;/div>&lt;div style="text-align: center">' + row["Likes"] + '&lt;/div>&lt;/td>' +&#13;
+      '&lt;td>&lt;div style="text-align: center">&lt;a href="' + row["URL"] + '" target="_blank" title="Go to twitter">&lt;img style="width: 24px; height: 24px; display: block;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE8SURBVGhD7dgtS0RBFIfxK6hBtNrNgljEZDQKRtGgVbsvH0AwiWDzK4hFjVrEYhUUwWK3+lYUfY7shWGY5D1nOSPngR/Lhp3hv9yy20RRVE1jvdeqG8cd9n7fVVo74runyjHDuEU7ouoxa/hEjPFWjNFoFPNYxSa2FdwgH2I2ZgHn+EDpUitqY6ZwhdIl/bKMTi3iBaXD++UEQ/hzK/hC6fB3yHN9imMFDyjd03nELN6QH3yPJYxAqzm8Ir+r8wj58CPyg/cxCM3MRkgbyA/ehXamI6QnpAdfYgCamY+YRn74DDSTxzP/soTaCGkH6eHym8GiSTzDZIR0hHTIIaxqx6iPkM6QDtmCZRNQHyFdIx2yjiqLId6KId6KId6KId6KId6KId6KId6KId76N0MOcJGQf+CjKIoihZrmB1n5QQYcJ3laAAAAAElFTkSuQmCC">&lt;/a>&lt;/div>&lt;div>&amp;nbsp;&lt;/div>&lt;/td>' +&#13;
+	  '&lt;tr>' +&#13;
+	  '&lt;td colspan=5 style="padding-top: 5px; padding-bottom: 5px">' + row["Text"] + '&lt;/td>' +&#13;
+	  '&lt;/tr>' + &#13;
+	  '&lt;tr>' + &#13;
+	  '&lt;td colspan=5 style="padding-top: 5px; height: 35px; text-align: center; font-weight: bold; background-color: ' + row["toneColor"] + '">' + row["Tone"] + '&lt;/td>' +&#13;
+	  '&lt;/tr>' + '&lt;/table>' + '&lt;/div>';</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">toneColor</property>
+                    <expression name="expression" type="javascript">if (row["Tone"] == 'Positive') '#00EE00'&#13;
+else if (row["Tone"] == 'Negative') '#EE0000'&#13;
+else '#DDDDDD'</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Count</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">Count</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Tweet Time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Tweet Time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DateTime</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">DateTime</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Retweets</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">Retweets</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Likes</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">Likes</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Text</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Text</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">User</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">User</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Handle</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Handle</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Location</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Location</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">latitude</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">latitude</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">longitude</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">longitude</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Subjectivity</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Subjectivity</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Tone</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">Tone</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">URL</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">URL</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">infoWindowContent</property>
+                    <property name="analysis">attribute</property>
+                </structure>
+                <structure>
+                    <property name="columnName">toneColor</property>
+                    <property name="analysis">attribute</property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Count</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Tweet Time</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">DateTime</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Retweets</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">Likes</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">Text</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">User</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">Handle</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">Location</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">latitude</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">longitude</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">Subjectivity</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">Tone</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">URL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">infoWindowContent</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">toneColor</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">CSV</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">Count</property>
+                    <property name="nativeName">Count</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ID</property>
+                    <property name="nativeName">ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">Tweet Time</property>
+                    <property name="nativeName">Tweet Time</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">DateTime</property>
+                    <property name="nativeName">DateTime</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">Retweets</property>
+                    <property name="nativeName">Retweets</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">Likes</property>
+                    <property name="nativeName">Likes</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">Text</property>
+                    <property name="nativeName">Text</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">User</property>
+                    <property name="nativeName">User</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">Handle</property>
+                    <property name="nativeName">Handle</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">Location</property>
+                    <property name="nativeName">Location</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">latitude</property>
+                    <property name="nativeName">latitude</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">longitude</property>
+                    <property name="nativeName">longitude</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">Subjectivity</property>
+                    <property name="nativeName">Subjectivity</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">Tone</property>
+                    <property name="nativeName">Tone</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">URL</property>
+                    <property name="nativeName">URL</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "Count", "ID", "Tweet Time", "DateTime", "Retweets", "Likes", "Text", "User", "Handle", "Location", "latitude", "longitude", "Subjectivity", "Tone", "URL" from "Data/Tweets.csv" : {"Count","Count",INT;"ID","ID",STRING;"Tweet Time","Tweet Time",STRING;"DateTime","DateTime",TIMESTAMP;"Retweets","Retweets",INT;"Likes","Likes",INT;"Text","Text",STRING;"User","User",STRING;"Handle","Handle",STRING;"Location","Location",STRING;"latitude","latitude",STRING;"longitude","longitude",STRING;"Subjectivity","Subjectivity",STRING;"Tone","Tone",STRING;"URL","URL",STRING}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Count</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Count</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ID</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ID</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tweet Time</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tweet Time</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DateTime</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DateTime</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Retweets</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Retweets</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Likes</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Likes</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Text</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Text</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>User</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>User</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Handle</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Handle</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Location</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Location</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>latitude</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>latitude</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>longitude</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>longitude</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>URL</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>URL</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Subjectivity</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Subjectivity</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Tone</design:name>
+              <design:position>15</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Tone</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">auto</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <extended-item extensionName="HTMLControl" id="4">
+            <method name="clientOnCreate"><![CDATA[// This example demonstrates how create the map and markers using Google Chart JSAPI
+
+/* ----------------------------------------------------------------------------------------- */
+/* This is the configuration object for creating the chart. You modify it to map your own data.
+ * See in-line comments for more details.
+ */
+ 
+ /* Add Google map api key here. Remove it before syncing to Github repo */
+ var gMapsApiKey = '';
+
+var config = {
+	/*
+	 * Provide the column binding names as shown below. If not all
+	 * column names are specified, the template will use the sample data instead.
+	 */
+
+	/* the column name for the latitude value in number format */
+	latColumn : "latitude",
+	/* the column name for the longitude value in number format */
+	lonColumn : "longitude",
+	/* the column name for the info window content in String format */
+	labelColumn : "infoWindowContent",
+	/* the column name for the marker type value in String format */
+	markerColumn : "Tone"
+};
+
+/* --------------------------------------------------------------------------------------- */
+/*
+ * Below is the implementation code for the example. In most cases you do not need to
+ * modify it, unless you want to change the chart style, or behavior. 
+ * Changing the config object above is sufficient. 
+ */
+
+config.testMode = config.latColumn == null	|| config.latColumn == "<changeme>"
+		|| config.lonColumn == null || config.lonColumn == "<changeme>"
+		|| config.markerColumn == null || config.markerColumn == "<changeme>"
+		|| config.labelColumn == null || config.labelColumn == "<changeme>";
+
+var customViz = this;
+customViz.setPrintTimeOut(10000);
+var containerId = this.getId();
+
+// if data binding is used, the data should be saved and transformed 
+// to match the calendar map data format.
+function dataTransfrom(cursor) {
+	var rows = [];
+	while (cursor.hasNext()) {
+		var rowData = cursor.next();
+		var row = [];
+		row.push(rowData[config.latColumn]);
+		row.push(rowData[config.lonColumn]);
+		row.push(String(rowData[config.labelColumn]));
+		row.push(String(rowData[config.markerColumn]));
+		rows.push(row);
+	}
+	return rows;
+}
+
+function drawMap() {
+
+	var dataTable = new google.visualization.DataTable();
+
+	dataTable.addColumn({
+		type : 'number',
+		id : config.latColumn
+	});
+	dataTable.addColumn({
+		type : 'number',
+		id : config.lonColumn
+	});
+	dataTable.addColumn({
+		type : 'string',
+		id : config.labelColumn
+	});
+	dataTable.addColumn({
+		type : 'string',
+		id : config.markerColumn
+	});
+
+	if (config.testMode) {
+		// This is the sample data used by google calendar map.
+		dataTable.addRows([ 
+          [37.4232, -122.0853, 'Work', 'Positive'],
+          [37.4289, -122.1697, 'University', 'Negative'],
+          [37.6153, -122.3900, 'Airport', 'Neutral'],
+          [37.4422, -122.1731, 'Shopping', 'Positive'] ]);
+	} else {
+		// This is the data binding method.
+		dataTable.addRows(dataTransfrom(customViz.getDataCursor()));
+	}
+
+	var options = {
+		showTooltip : false,
+		showInfoWindow: true,
+		zoomLevel: 3,
+		icons: {
+            Positive: {
+              normal: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=+|00EE00|000000',
+              selected: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=+|00EE00|000000'
+            },
+            Negative: {
+              normal: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=+|EE0000|000000',
+              selected: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=+|EE0000|000000'
+            },
+            Neutral: {
+              normal: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=+|DDDDDD|000000',
+              selected: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=+|DDDDDD|000000'
+            },
+            default: {
+              normal: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=+|DDDDDD|000000',
+              selected: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=+|DDDDDD|000000'
+            }
+		}		
+	};
+
+	var map = new google.visualization.Map(document.getElementById(containerId));
+	
+	map.draw(dataTable, options);
+	
+	//add ready event and its handler
+	google.visualization.events.addListener(map, 'ready', function(){
+		customViz.setDelegate(map);
+		//google map's performance depends on google API service. 
+		//Without API key, the set the timeout long in case the performance is not good.
+		window.setTimeout(function(){customViz.setPrintReady()}, 5000);
+	});
+}
+
+
+// For google jsapi, we need to use dynamic loading.
+////$.ajax({
+////	url : 'https://www.gstatic.com/charts/loader.js"',
+////	dataType : 'script',
+////	cache : true,
+////	success : function() {
+////		// After successfully loading google jsapi , we need to load the visualization.
+////		google.charts.load('current', {
+////			'packages' : [ 'map' ],
+////			'other_params' : 'key=your key goes here' });
+////		google.charts.setOnLoadCallback( drawMap );
+////	}
+////});  green  http://chart.apis.google.com/chart?chst=d_map_pin_letter&amp;chld=+|00EE00|000000
+
+var callback = function() {
+
+	console.log ('here');
+	debugger;
+	
+google.charts.load('current', {
+	'packages' : [ 'map' ],
+	'mapsApiKey': gMapsApiKey
+	 });
+google.charts.setOnLoadCallback( drawMap );	
+
+}
+
+
+var sMapsURL = 'https://maps.googleapis.com/maps/api/js?key=' + gMapsApiKey;
+head.load (sMapsURL,'https://www.gstatic.com/charts/loader.js','https://www.google.com/jsapi', callback);
+
+
+]]></method>
+            <property name="height">800px</property>
+            <property name="width">100%</property>
+            <property name="dataSet">Tweets</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Count</property>
+                    <text-property name="displayName">Count</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Count"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">ID</property>
+                    <text-property name="displayName">ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Tweet Time</property>
+                    <text-property name="displayName">Tweet Time</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Tweet Time"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DateTime</property>
+                    <text-property name="displayName">DateTime</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DateTime"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">Retweets</property>
+                    <text-property name="displayName">Retweets</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Retweets"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">Likes</property>
+                    <text-property name="displayName">Likes</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Likes"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">Text</property>
+                    <text-property name="displayName">Text</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Text"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">User</property>
+                    <text-property name="displayName">User</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["User"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Handle</property>
+                    <text-property name="displayName">Handle</text-property>
+                    <expression name="expression" type="javascript">"@"+dataSetRow["Handle"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Location</property>
+                    <text-property name="displayName">Location</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Location"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">latitude</property>
+                    <text-property name="displayName">latitude</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["latitude"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">longitude</property>
+                    <text-property name="displayName">longitude</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["longitude"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Subjectivity</property>
+                    <text-property name="displayName">Subjectivity</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Subjectivity"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Tone</property>
+                    <text-property name="displayName">Tone</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Tone"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">URL</property>
+                    <text-property name="displayName">URL</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["URL"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Handle_1</property>
+                    <text-property name="displayName">Handle</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Handle"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">infoWindowContent</property>
+                    <text-property name="displayName">infoWindowContent</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["infoWindowContent"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <property name="displayName">Google Map from Google Charts</property>
+        </extended-item>
+    </body>
+</report>
